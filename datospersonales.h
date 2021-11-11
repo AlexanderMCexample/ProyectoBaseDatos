@@ -1,11 +1,8 @@
 #include <cstring> //para strcpy
 #include <conio.h> //gets()
 //Datos Personales
-//clase para pruebas
 //Clientes y Dueño
-
 //Semana 1
-
 
 class Datos_personales{
 public:
