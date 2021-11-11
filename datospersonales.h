@@ -2,6 +2,8 @@
 #include <conio.h> //gets()
 //Datos Personales
 //Clientes y Dueño
+
+//Semana 1
 class Datos_personales{
 public:
     char nombre[100];
