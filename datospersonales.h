@@ -1,6 +1,7 @@
 #include <cstring> //para strcpy
 #include <conio.h> //gets()
 //Datos Personales
+//Clientes y Dueño
 class Datos_personales{
 public:
     char nombre[100];
