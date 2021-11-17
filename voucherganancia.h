@@ -2,7 +2,8 @@
 #include <conio.h> //gets()
 #include "tablas.cpp"
 #include "ingredientes.cpp"
-//vaucher de ganancias semana
+//vaucher de ganancias día
+
 class VoucherGanancia {
     //atributos
     public:
@@ -14,11 +15,15 @@ class VoucherGanancia {
     VoucherGanancia(int _dia = 0, double _capital = 0){ 
         tab = Tablas(_dia,_capital);
         ing = Ingredientes(_capital);
+        ing.Crear();
     }
 
 
     //Metodos
-    void tabla();
+    void gasto();
+    
+    void ganancia();
+
     void imprimirVoucher();
 
 };

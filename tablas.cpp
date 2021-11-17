@@ -20,7 +20,7 @@ void Tablas::imprimirTabla()
   cout << "====================================\n\n";
 }
 
-void Tablas::setGanacia()
+void Tablas::setGanancia()
 {
   char a[20];
   cin.ignore(10000,'\n'); //ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
@@ -29,6 +29,21 @@ void Tablas::setGanacia()
   strcpy(nombreGanancias[controlGanancias],a);
   cout << "\nIngrese el monto de la ganancia: ";
   cin >> ganancias[controlGanancias];
+  cout <<endl;
+  controlGanancias++; //control ganancia es el tamaño actual de la lista
+}
+
+void Tablas::setGanancia(double &_ganancia)
+{
+  char a[20];
+  cin.ignore(10000,'\n'); //ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
+  cout <<"Ingrese el nombre de la ganancia: ";
+  gets(a);
+  strcpy(nombreGanancias[controlGanancias],a);
+  cout << "\nIngrese el monto de la ganancia: ";
+  cin >> ganancias[controlGanancias];
+  _ganancia = ganancias[controlGanancias]; //para pasar el dato valor de la ganancia por referencia
+
   cout <<endl;
   controlGanancias++; //control ganancia es el tamaño actual de la lista
 }
@@ -43,6 +58,14 @@ void Tablas::setGasto()
   cout << "\nIngrese el monto del gasto: ";
   cin >> gastos[controlGastos];
   cout <<endl;
+  controlGastos++; //control gastos es el tamaño actual de la lista
+}
+
+void Tablas::setGasto(char _nombreGasto[20], double _gasto)
+{
+  cin.ignore(10000,'\n');//ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
+  strcpy(nombreGastos[controlGastos],_nombreGasto);
+  gastos[controlGastos] = _gasto;
   controlGastos++; //control gastos es el tamaño actual de la lista
 }
 
@@ -152,7 +175,7 @@ void Tablas::menu()
     switch (opcion)
     {
     case 1:
-      setGanacia(); //colocar una ganancia
+      setGanancia(); //colocar una ganancia
       break;
     case 2:
       setGasto(); //colocar un gasto

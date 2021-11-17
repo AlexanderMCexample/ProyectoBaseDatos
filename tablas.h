@@ -23,8 +23,10 @@ class Tablas {
     }
 
     //Metodos
-    void setGanacia(); //ingresar una ganancia
+    void setGanancia();
+    void setGanancia(double &_ganancia); //ingresar una ganancia
     void setGasto(); //ingresar un gasto
+    void setGasto(char _nombreGasto[20], double _gasto);
 
     void getGanacia(int _getGanancia, double &_ganancia, char _nombreGanancia[20]); //obtener una ganancia de la lista
     void getGasto(int _getGasto, double &_gasto, char _nombreGasto[20]); //obtener un gasto de la lista

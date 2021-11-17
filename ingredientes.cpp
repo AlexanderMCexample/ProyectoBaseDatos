@@ -170,3 +170,28 @@ void Ingredientes::menu()
     }
   }while(opcion!=0);
 }
+
+void Ingredientes::incrementarDinero(int _dinero){
+	dinero += _dinero;
+}
+
+void Ingredientes::Comprar(Tablas &o)
+{
+	int opcion;
+    while(opcion!=0)
+    {
+	    cout << "Elija un ingrediente a comprar                  s/."<<dinero<<endl;
+	    cin >> opcion;
+	    if (opcion<1 || opcion>8)
+	    {
+	    	cout<<"Elija una opcion valida";
+		}
+		else
+		{
+	    cantidadesT[opcion-1]=cantidadesT[opcion-1]+cantidadesV[opcion-1]; //colocar una ganancia
+	    dinero=dinero-precios[opcion-1];
+
+		o.setGasto(nombres[opcion-1],precios[opcion-1]); //colocar los valores de gasto y su nombre por referencia
+		}
+	}
+}

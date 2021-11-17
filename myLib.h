@@ -4,3 +4,4 @@
 void tablas();
 void ingredientes();
 void datosPersonales();
+void voucherGanancia();

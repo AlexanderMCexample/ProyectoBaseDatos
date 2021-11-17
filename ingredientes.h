@@ -10,8 +10,6 @@ class Ingredientes
     char nombres[100][20];
 	double precios[100], cantidadesT[100], cantidadesV[100];
 	int dinero;
-	
-    
 
     //constructores
     Ingredientes(int _dinero = 0)
@@ -34,6 +32,8 @@ class Ingredientes
 	void Tienda();
     void imprimirAlmacen(); //imprime la tabla dia, capital, ganacia, gasto
     void menu(); //menu para acceder a los anteriores metodos
+    void incrementarDinero(int _dinero);
 
+    void Comprar(Tablas &o);
 
 };

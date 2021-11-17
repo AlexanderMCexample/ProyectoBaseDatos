@@ -4,9 +4,11 @@
 #include <cstring> //strcpy strcmp
 #include <String.h> //string 
 //clases
-#include "tablas.cpp" //clase Tablas
+//#include "tablas.cpp" //clase Tablas
 #include "datospersonales.cpp" //clase Datos_Personales
-#include "ingredientes.cpp" //clase Ingredientes 
+//#include "ingredientes.cpp" //clase Ingredientes 
+
+#include "voucherganancia.cpp"
 
 using namespace std;
 
@@ -75,4 +77,20 @@ void datosPersonales()
   cout<<nombre <<endl;
 
 
+}
+
+
+void voucherGanancia()
+{
+  int dia;
+  double capital;
+  cout << "Que número de día es: ";
+  cin >> dia;
+  cout << "\n¿Cúal es su capital actual? ";
+  cin >> capital;
+  cout << endl;
+  VoucherGanancia voucherG(dia,capital);
+  voucherG.ganancia();
+  voucherG.gasto();
+  voucherG.imprimirVoucher();
 }
