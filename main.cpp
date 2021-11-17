@@ -2,10 +2,6 @@
 #include "myLib.h"
 using namespace std;    
 
-void tablas();
-void ingredientes();
-void datosPersonales();
-
 int main() 
 {
   tablas(); //clase tablas
