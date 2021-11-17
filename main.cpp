@@ -16,16 +16,13 @@ int main()
 
   return 0;
 }
-// Cambios preubas 3 alex
-// Cambios ptuebas Alex
-// tablas asdadaddadsa
 
 
 void tablas(){
     //CREACION DE LA LISTA DE CLASES TABLAS====================================== 
   //===========================================================================
 
-  //Tablas tab(1,500,"casa"),tab2(2,6000,"Master"); //== Tablas tab[2]
+  //Tablas tab(1,500),tab2(2,6000); //== Tablas tab[2]
   Tablas tab[5]; //creación de una lista de objetos de la clase [5 objetos]
 
   for(int i=0;i<5;i++){ //inicializando con el constructor los objetos con el día y la capital
