@@ -14,7 +14,7 @@ class Ingredientes
     
 
     //constructores
-    Ingredientes(int _dinero=0)
+    Ingredientes(int _dinero = 0)
 	{ //contructor del los valroes y para inicializar las listas
         dinero = _dinero;
         for(int i=0;i<100;i++)
