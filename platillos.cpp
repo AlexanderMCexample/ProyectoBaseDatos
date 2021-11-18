@@ -17,10 +17,10 @@ void Platillos::Crear2()
   	switch(i)
   	{
   	case 0:
-  		strcpy(nombres[i],"Pizza de Pepperoni   ");
+  		strcpy(nombres[i],"Pizza de Pepperoni");
   		precios[i]=30;
   		cantidad_ingredientes[i]=4;
-  		for (int j=0; i<cantidad_ingredientes[i]; i++)
+  		for (int j=0; j<cantidad_ingredientes[i]; j++)
   		{
   			switch(j)
   			{
@@ -43,10 +43,10 @@ void Platillos::Crear2()
 		}
   		break;
   	case 1:
-  		strcpy(nombres[i],"Pizza Americana   ");
+  		strcpy(nombres[i],"Pizza Americana");
   		precios[i]=35;
   		cantidad_ingredientes[i]=5;
-  		for (int j=0; i<cantidad_ingredientes[i]; i++)
+  		for (int j=0; j<cantidad_ingredientes[i]; j++)
   		{
   			switch(j)
   			{
@@ -76,18 +76,13 @@ void Platillos::Crear2()
   }
 }
 
-void Platillos::Menu_compra()
-{
-  for (int i=0; i<2; i++)
-  {
-  	cout<<i+1<<") "<<nombres[i]<<":           s/."<<precios[i]<<"\n";
-  }
-  cout<< "0) Salir\n\n";
-  Vender();
-}
-
 void Platillos::Vender()
 {
+	for (int i=0; i<2; i++)
+    {
+  	cout<<i+1<<") "<<nombres[i]<<":           s/."<<precios[i]<<"\n";
+    }
+  	cout<< "0) Salir\n\n";
 	int opcion;
     while(opcion!=0)
     {
