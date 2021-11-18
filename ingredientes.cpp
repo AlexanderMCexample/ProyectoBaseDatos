@@ -94,7 +94,7 @@ void Ingredientes::Comprar()
     {
 	    cout << "Elija un ingrediente a comprar                  s/."<<dinero<<endl;
 	    cin >> opcion;
-	    if (opcion<1 || opcion>8)
+	    if (opcion<0 || opcion>8)
 	    {
 	    	cout<<"Elija una opcion valida";
 		}

@@ -8,6 +8,7 @@
 //#include "datospersonales.cpp" //clase Datos_Personales
 #include "voucherganancia.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
+#include "platillos.cpp"
 using namespace std;
 
 
@@ -100,4 +101,11 @@ void voucherclientes()
 
   dos.imprimirVoucher_Clientes();
 
+}
+
+void platillos()
+{
+	Platillos segundo;
+	segundo.Crear2();
+	segundo.Menu_compra();
 }
