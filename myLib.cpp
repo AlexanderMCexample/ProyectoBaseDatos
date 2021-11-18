@@ -10,8 +10,9 @@
 
 #include "voucherganancia.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
-#include "propietario.cpp"
 #include "platillos.cpp"
+
+#include "propietario.cpp"
 using namespace std;
 
 
