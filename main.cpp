@@ -4,10 +4,10 @@ using namespace std;
 
 int main() 
 {
-  //voucherGanancia();
-  //voucherclientes();
-  //platillos();
-  //clientes();
+  voucherGanancia();
+  voucherclientes();
+  platillos();
+  clientes();
   propietario();
 
   return 0;
