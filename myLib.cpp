@@ -4,12 +4,10 @@
 #include <cstring> //strcpy strcmp
 #include <String.h> //string 
 //clases
-//#include "tablas.cpp" //clase Tablas
-#include "datospersonales.cpp" //clase Datos_Personales
-//#include "ingredientes.cpp" //clase Ingredientes 
 
+//#include "datospersonales.cpp" //clase Datos_Personales
 #include "voucherganancia.cpp"
-
+#include "vouchercliente.cpp" //clase vouchercliente
 using namespace std;
 
 
@@ -93,4 +91,13 @@ void voucherGanancia()
   voucherG.ganancia();
   voucherG.gasto();
   voucherG.imprimirVoucher();
+}
+
+void voucherclientes()
+{
+
+  Voucher_Clientes dos;
+
+  dos.imprimirVoucher_Clientes();
+
 }
