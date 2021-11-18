@@ -4,9 +4,9 @@
 #include <cstring> //strcpy strcmp
 #include <String.h> //string 
 //Clases
-#include "vouchercliente.h"
+#include "vouchercliente.h" //LLamamos nuestra Clase
 
-void Voucher_Clientes::setDatos()
+void Voucher_Clientes::setDatos() //Metodo que nos sirvira para establecer los datos manualmente
 {
     datos.setDatos();
     datos.getNombre(nombre);
@@ -14,10 +14,8 @@ void Voucher_Clientes::setDatos()
     datos.getNumeroTarjeta(ntarjeta);
 }
 
-void Voucher_Clientes::imprimirDatosVoucher()
+void Voucher_Clientes::imprimirDatosVoucher() //Metodo que nos permite imprimir la parte de Datos personales del Voucher
 {
-
-
 
     std::cout << "Generando Vaucher......" << "\n";
 
@@ -27,6 +25,5 @@ void Voucher_Clientes::imprimirDatosVoucher()
     std::cout << "Numero de Tarjeta: " << ntarjeta <<  "\n";
     std::cout << "\n";
   
-
 }
 

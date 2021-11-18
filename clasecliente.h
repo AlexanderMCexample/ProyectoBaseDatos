@@ -4,7 +4,7 @@
 class Cliente {
     //Atributos
     public:
-    Voucher_Clientes voucher;
+    Voucher_Clientes voucher; //LLamamos nuestra clase Voucher_Cliente
     
     //Constructor
     Cliente(){
@@ -15,7 +15,7 @@ class Cliente {
 
     
     //Metodos
-    void imprimirVoucher_Clientes();
+    void imprimirVoucher_Clientes(); //Imprimir Voucher Clientes
 
 
 };
