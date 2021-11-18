@@ -44,3 +44,13 @@ void Datos_personales::getNombre(char _nombre[100])
 {
   strcpy(_nombre,nombre);
 }
+
+void Datos_personales::getTipoTarjeta(char _ttarjeta[100])
+{
+  strcpy(_ttarjeta,ttarjeta);
+}
+void Datos_personales::getNumeroTarjeta(int &_ntarjeta)
+{
+  _ntarjeta = ntarjeta;
+}
+

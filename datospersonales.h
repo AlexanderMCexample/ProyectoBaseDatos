@@ -1,5 +1,6 @@
 #include <cstring> //para strcpy
 #include <conio.h> //gets()
+#include <iostream>
 
 //Datos Personales
 //Clientes y Dueño
@@ -28,4 +29,6 @@ public:
     void setDatos();
 
     void getNombre(char _nombre[100]);
+    void getNumeroTarjeta(int &_ntarjeta);
+    void getTipoTarjeta(char _ttarjeta[100]);
 };

@@ -4,10 +4,11 @@
 #include <cstring> //strcpy strcmp
 #include <String.h> //string 
 //clases
-#include "tablas.cpp" //clase Tablas
-#include "datospersonales.cpp" //clase Datos_Personales
-#include "ingredientes.cpp" //clase Ingredientes 
-
+//#include "tablas.cpp" //clase Tablas
+//#include "datospersonales.cpp" //clase Datos_Personales
+//#include "ingredientes.cpp" //clase Ingredientes 
+#include "vouchercliente.cpp" //clase vouchercliente
+#include "voucherganancia.cpp"
 using namespace std;
 
 
@@ -74,5 +75,14 @@ void datosPersonales()
   uno.getNombre(nombre);
   cout<<nombre <<endl;
 
+
+}
+
+void voucherclientes()
+{
+
+  Voucher_Clientes dos;
+
+  dos.imprimirVoucher_Clientes();
 
 }

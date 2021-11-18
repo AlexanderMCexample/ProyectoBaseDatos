@@ -14,7 +14,7 @@ class Ingredientes
     
 
     //constructores
-    Ingredientes(int _dinero)
+    Ingredientes(int _dinero = 0)
 	{ //contructor del los valroes y para inicializar las listas
         dinero = _dinero;
         for(int i=0;i<100;i++)
@@ -24,8 +24,6 @@ class Ingredientes
         	cantidadesV[i]=0;
         	strcpy(nombres[i],"");
         }
-    }
-    Ingredientes(){ //constructo por defecto para crear las listas de los objetos de la clase
     }
 
     //Metodos
