@@ -4,10 +4,14 @@
 #include <cstring> //strcpy strcmp
 #include <String.h> //string 
 //clases
+#include "datospersonales.cpp"
+#include "tablas.cpp"
+#include "ingredientes.cpp"
 
-//#include "datospersonales.cpp" //clase Datos_Personales
 #include "voucherganancia.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
+#include "propietario.cpp"
+
 using namespace std;
 
 
