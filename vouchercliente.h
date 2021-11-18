@@ -6,6 +6,7 @@
 class Voucher_Clientes {
     //Atributos
     public:
+
     Platillos platos;
     Datos_personales datos;
     char nombre[20];
@@ -27,8 +28,10 @@ class Voucher_Clientes {
     }
 
     //Metodos
+
     void imprimirDatosVoucher();
     void setDatos();
     void imprimirGastos();
     void setGastos();
 };
+

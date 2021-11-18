@@ -28,7 +28,6 @@ void Voucher_Clientes::imprimirDatosVoucher()
     std::cout << "\n";
 
 }
-
 void Voucher_Clientes::imprimirGastos()
 {
 	cout << "--------Gastos--------" << "\n";
