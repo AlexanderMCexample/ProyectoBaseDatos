@@ -13,7 +13,7 @@
 //#include "platillos.cpp"
 
 #include "clasecliente.cpp" //clase Cliente
-#include "propietario.cpp"
+#include "duenio.cpp"
 using namespace std;
 
 
@@ -121,4 +121,22 @@ void clientes()
 	Cliente client;
 	client.compra();
 	client.imprimirVoucher_Clientes();
+}
+
+void propietario()
+{
+  int dia;
+  double capital;
+  cout << "Que número de día es: ";
+  cin >> dia;
+  cout << "\n¿Cúal es su capital actual? ";
+  cin >> capital;
+  cout << endl;
+  Propietario propie(dia,capital);
+  cin.ignore(10000,'\n');
+  propie.setDatosPropietario();
+  propie.ganancias();
+  propie.gastos();
+  propie.imprimirAlmacen();
+  propie.imprimirTabla();
 }

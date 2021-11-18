@@ -23,4 +23,6 @@ void VoucherGanancia::imprimirVoucher(){
     tab.imprimirTabla();
 }
 
-
+void VoucherGanancia::imprimirAlmacen(){
+    ing.imprimirAlmacen();
+}

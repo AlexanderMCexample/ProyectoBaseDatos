@@ -1,6 +1,3 @@
-#include <cstring> //para strcpy
-#include <conio.h> //gets()
-
 //vaucher de ganancias día
 
 class VoucherGanancia {
@@ -24,5 +21,7 @@ class VoucherGanancia {
     void ganancia();
 
     void imprimirVoucher();
+
+    void imprimirAlmacen();
 
 };

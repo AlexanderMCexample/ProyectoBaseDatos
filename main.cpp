@@ -7,7 +7,8 @@ int main()
   //voucherGanancia();
   //voucherclientes();
   //platillos();
-  clientes();
+  //clientes();
+  propietario();
 
   return 0;
 }
