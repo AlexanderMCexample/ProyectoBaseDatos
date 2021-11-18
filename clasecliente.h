@@ -16,6 +16,5 @@ class Cliente {
     
     //Metodos
     void imprimirVoucher_Clientes();
-
-
+    void compra();
 };

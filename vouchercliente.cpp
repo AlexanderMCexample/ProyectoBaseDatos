@@ -26,7 +26,18 @@ void Voucher_Clientes::imprimirDatosVoucher()
     std::cout << "Tipo de Tarjeta: "<< ttarjeta << "\n";
     std::cout << "Numero de Tarjeta: " << ntarjeta <<  "\n";
     std::cout << "\n";
-  
 
 }
+void Voucher_Clientes::imprimirGastos()
+{
+	cout << "--------Gastos--------" << "\n";
+	for (int i=0 ; i<control_gastos ; i++)
+	{
+		cout<<"Compra "<<i+1<<")"<<gastos[i]<<"\n";
+	}
+}
 
+void Voucher_Clientes::setGastos()
+{
+	platos.Vender(gastos, control_gastos);
+}

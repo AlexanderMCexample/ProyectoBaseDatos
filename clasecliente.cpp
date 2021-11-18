@@ -6,10 +6,18 @@
 #include "clasecliente.h" //Clase Cliente
 using namespace std;   
 
-void Cliente::imprimirVoucher_Clientes()
+void Cliente::imprimirVoucher_Clientes() //Llamamos nuestra funcion imprimir Voucher para mostrar en pantalla el Voucher completo
 {
     voucher.imprimirDatosVoucher();
+    voucher.imprimirGastos();
+
 
 
 
 }
+
+void Cliente::compra()
+{
+	voucher.setGastos();
+}
+

@@ -10,7 +10,7 @@
 
 #include "voucherganancia.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
-#include "platillos.cpp"
+//#include "platillos.cpp"
 
 #include "clasecliente.cpp" //clase Cliente
 #include "propietario.cpp"
@@ -108,17 +108,17 @@ void voucherclientes()
 
 }
 
-void clientes()
-{
-  Cliente tres;
-  tres.imprimirVoucher_Clientes();
-  
-}
-
 
 void platillos()
 {
 	Platillos segundo;
 	segundo.Crear2();
 	segundo.Vender();
+}
+
+void clientes()
+{
+	Cliente client;
+	client.compra();
+	client.imprimirVoucher_Clientes();
 }
