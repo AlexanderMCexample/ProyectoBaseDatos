@@ -8,6 +8,7 @@
 //#include "datospersonales.cpp" //clase Datos_Personales
 #include "voucherganancia.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
+#include "clasecliente.cpp" //clase Cliente
 using namespace std;
 
 
@@ -97,7 +98,14 @@ void voucherclientes()
 {
 
   Voucher_Clientes dos;
+  dos.setDatos();
+  dos.imprimirDatosVoucher();
 
-  dos.imprimirVoucher_Clientes();
+}
 
+void clientes()
+{
+  Cliente tres;
+  tres.imprimirVoucher_Clientes();
+  
 }

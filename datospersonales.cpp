@@ -12,7 +12,7 @@ using namespace std;
 void Datos_personales::setDatos()
 {
   char perfil[100];
-  cin.ignore(10000,'\n');
+  //cin.ignore(10000,'\n');
   cout << "Ingresar nombre: " << "\n";
   gets(perfil);
   strcpy(nombre,perfil);
@@ -28,6 +28,8 @@ void Datos_personales::setDatos()
   cin >> ctarjeta;  
   cout << "Datos recibidos..... confirmando....." << "\n";
 }
+
+
 
 void Datos_personales::imprimirDatos()
 {
