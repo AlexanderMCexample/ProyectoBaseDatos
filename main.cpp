@@ -4,8 +4,9 @@ using namespace std;
 
 int main() 
 {
-  voucherGanancia();
-  voucherclientes();
+  //voucherGanancia();
+  //voucherclientes();
+  platillos();
 
   return 0;
 }

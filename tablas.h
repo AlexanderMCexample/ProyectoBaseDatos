@@ -42,5 +42,4 @@ class Tablas {
     void imprimirTabla(); //imprime la tabla dia, capital, ganacia, gasto
     void menu(); //menu para acceder a los anteriores metodos
 
-
 };

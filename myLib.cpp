@@ -110,5 +110,5 @@ void platillos()
 {
 	Platillos segundo;
 	segundo.Crear2();
-	segundo.Menu_compra();
+	segundo.Vender();
 }

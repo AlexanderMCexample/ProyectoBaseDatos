@@ -33,7 +33,6 @@ class Platillos
 
     //Metodos
     void Crear2();
-    void Menu_compra();
     void Vender(); 
     
 
