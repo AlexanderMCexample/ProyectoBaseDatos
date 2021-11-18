@@ -2,7 +2,6 @@
 #include <conio.h> //gets()
 //clases
 
-#include "datospersonales.cpp"
 
 class Voucher_Clientes {
     //Atributos

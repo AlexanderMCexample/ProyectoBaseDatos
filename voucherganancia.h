@@ -1,7 +1,6 @@
 #include <cstring> //para strcpy
 #include <conio.h> //gets()
-#include "tablas.cpp"
-#include "ingredientes.cpp"
+
 //vaucher de ganancias día
 
 class VoucherGanancia {
