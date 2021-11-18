@@ -34,6 +34,7 @@ class Platillos
     //Metodos
     void Crear2();
     void Vender(); 
+    void Vender(double _compra[100], int &_control_gastos);
     
 
 

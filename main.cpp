@@ -6,7 +6,8 @@ int main()
 {
   //voucherGanancia();
   //voucherclientes();
-  platillos();
+  //platillos();
+  clientes();
 
   return 0;
 }

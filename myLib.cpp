@@ -4,11 +4,15 @@
 #include <cstring> //strcpy strcmp
 #include <String.h> //string 
 //clases
+#include "datospersonales.cpp"
+#include "tablas.cpp"
+#include "ingredientes.cpp"
 
-//#include "datospersonales.cpp" //clase Datos_Personales
 #include "voucherganancia.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
-#include "platillos.cpp"
+#include "clasecliente.cpp" //clase Cliente
+#include "propietario.cpp"
+//#include "platillos.cpp"
 using namespace std;
 
 
@@ -98,14 +102,29 @@ void voucherclientes()
 {
 
   Voucher_Clientes dos;
-
-  dos.imprimirVoucher_Clientes();
+  dos.setDatos();
+  dos.imprimirDatosVoucher();
 
 }
+
+//void clientes()
+//{
+  //Cliente tres;
+  //tres.imprimirVoucher_Clientes();
+  
+//}
+
 
 void platillos()
 {
 	Platillos segundo;
 	segundo.Crear2();
 	segundo.Vender();
+}
+
+void clientes()
+{
+	Cliente client;
+	client.compra();
+	client.imprimirVoucher_Clientes();
 }

@@ -8,6 +8,7 @@
 #include "ingredientes.h" //clase Ingredientes 
 
 
+
 using namespace std;    
 
 void Ingredientes::Crear()

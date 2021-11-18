@@ -9,8 +9,8 @@
 using namespace std;    
 
 void VoucherGanancia::gasto(){
-    ing.Tienda();
-    ing.Comprar(tab);
+    ing.Tienda(); //imprimir los elementos tienda
+    ing.Comprar(tab); //
 }
 
 void VoucherGanancia::ganancia(){

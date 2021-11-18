@@ -6,16 +6,17 @@
 //Clases
 #include "vouchercliente.h"
 
-
-void Voucher_Clientes::imprimirVoucher_Clientes()
+void Voucher_Clientes::setDatos()
 {
-    char nombre[100];
-    char ttarjeta[100];
-    int ntarjeta;
-
+    datos.setDatos();
     datos.getNombre(nombre);
     datos.getTipoTarjeta(ttarjeta);
     datos.getNumeroTarjeta(ntarjeta);
+}
+
+void Voucher_Clientes::imprimirDatosVoucher()
+{
+
 
 
     std::cout << "Generando Vaucher......" << "\n";
@@ -25,6 +26,19 @@ void Voucher_Clientes::imprimirVoucher_Clientes()
     std::cout << "Tipo de Tarjeta: "<< ttarjeta << "\n";
     std::cout << "Numero de Tarjeta: " << ntarjeta <<  "\n";
     std::cout << "\n";
-    std::cout << "--------Pago de Servicios--------" << "\n";
 
+}
+
+void Voucher_Clientes::imprimirGastos()
+{
+	cout << "--------Gastos--------" << "\n";
+	for (int i=0 ; i<control_gastos ; i++)
+	{
+		cout<<"Compra "<<i+1<<")"<<gastos[i]<<"\n";
+	}
+}
+
+void Voucher_Clientes::setGastos()
+{
+	platos.Vender(gastos, control_gastos);
 }
