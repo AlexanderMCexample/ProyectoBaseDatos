@@ -118,25 +118,35 @@ void platillos()
 
 void clientes()
 {
+  cout << "\n\nBienvenido mi estimado Cliente\n\n";
 	Cliente client;
+  cout << "\n\n==Realizar Una Compra==\n\n";
 	client.compra();
+  cout << "\n\n";
 	client.imprimirVoucher_Clientes();
 }
 
 void propietario()
 {
+  cout << "\n\nBienvenido Dueño 1\n\n";
+  Propietario propie;
+  cin.ignore(10000,'\n');
+  propie.setDatosPropietario();
   int dia;
   double capital;
+  cout << "\n\n Datos para construir su tabla\n\n";
   cout << "Que número de día es: ";
   cin >> dia;
   cout << "\n¿Cúal es su capital actual? ";
   cin >> capital;
   cout << endl;
-  Propietario propie(dia,capital);
-  cin.ignore(10000,'\n');
-  propie.setDatosPropietario();
+  propie = Propietario(dia,capital);
+
+  cout << "\n\n==Aquí ingrese una ganancia==\n\n";
   propie.ganancias();
   propie.gastos();
+  cout << "\n\n===Almacén===\n\n";
   propie.imprimirAlmacen();
+  cout << "\n\n===Voucher===\n\n";
   propie.imprimirTabla();
 }

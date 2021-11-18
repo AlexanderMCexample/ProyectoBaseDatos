@@ -21,7 +21,6 @@ public:
         strcpy(ttarjeta,"Sin respuesta");
         ntarjeta = 0;
         ctarjeta = 0;
-        std::cout << "\n" << "\n" <<  "Listo para recibir datos del cliente" <<  "\n" << "\n" ;
     }
     
     //Metodos

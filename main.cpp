@@ -4,9 +4,9 @@ using namespace std;
 
 int main() 
 {
-  voucherGanancia();
-  voucherclientes();
-  platillos();
+  //voucherGanancia();
+  //voucherclientes();
+  //platillos();
   clientes();
   propietario();
 
