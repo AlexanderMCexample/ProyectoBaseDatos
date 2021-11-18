@@ -32,8 +32,8 @@ class Ingredientes
 	void Tienda();
     void imprimirAlmacen(); //imprime la tabla dia, capital, ganacia, gasto
     void menu(); //menu para acceder a los anteriores metodos
+    
     void incrementarDinero(int _dinero);
-
     void Comprar(Tablas &o);
 
 };

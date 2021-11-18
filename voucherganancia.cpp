@@ -9,8 +9,6 @@
 using namespace std;    
 
 void VoucherGanancia::gasto(){
-    char nombreGasto[20];
-    double gasto;
     ing.Tienda();
     ing.Comprar(tab);
 }
