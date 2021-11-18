@@ -144,6 +144,7 @@ void propietario()
 
   cout << "\n\n==Aquí ingrese una ganancia==\n\n";
   propie.ganancias();
+  cout << "\n\n==MERCADO==\n\n";
   propie.gastos();
   cout << "\n\n===Almacén===\n\n";
   propie.imprimirAlmacen();
