@@ -4,11 +4,8 @@ using namespace std;
 
 int main() 
 {
-  //voucherGanancia();
-  //voucherclientes();
-  //platillos();
-  clientes();
-  propietario();
+  menu();
 
   return 0;
 }
+

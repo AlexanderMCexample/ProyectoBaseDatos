@@ -4,25 +4,25 @@
 #include <cstring> //strcpy strcmp
 #include <String.h> //string 
 //clases
-#include "voucherganancia.h" //clase Tablas
+#include "registroVenta.h" //clase Tablas
 
 using namespace std;    
 
-void VoucherGanancia::gasto(){
+void RegistroVenta::gasto(){
     ing.Tienda(); //imprimir los elementos tienda
     ing.Comprar(tab); //
 }
 
-void VoucherGanancia::ganancia(){
+void RegistroVenta::ganancia(){
     double ganancia=0;
     tab.setGanancia(ganancia);
     ing.incrementarDinero(ganancia);    
 }
 
-void VoucherGanancia::imprimirVoucher(){
+void RegistroVenta::imprimirVoucher(){
     tab.imprimirTabla();
 }
 
-void VoucherGanancia::imprimirAlmacen(){
+void RegistroVenta::imprimirAlmacen(){
     ing.imprimirAlmacen();
 }

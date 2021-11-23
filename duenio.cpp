@@ -13,16 +13,16 @@ void Propietario::setDatosPropietario(){
 }
 
 void Propietario::imprimirTabla(){
-    voucher.imprimirVoucher();
+    registroVenta.imprimirVoucher();
 }
 
 void Propietario::imprimirAlmacen(){
-    voucher.imprimirAlmacen();
+    registroVenta.imprimirAlmacen();
 }
 
 void Propietario::ganancias(){
-    voucher.ganancia();
+    registroVenta.ganancia();
 }
 void Propietario::gastos(){
-    voucher.gasto();
+    registroVenta.gasto();
 }

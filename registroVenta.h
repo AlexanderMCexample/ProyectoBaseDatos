@@ -1,6 +1,6 @@
 //vaucher de ganancias día
 
-class VoucherGanancia {
+class RegistroVenta {
     //atributos
     public:
     Tablas tab;
@@ -8,7 +8,7 @@ class VoucherGanancia {
 
 
     //constructores
-    VoucherGanancia(int _dia = 0, double _capital = 0){ 
+    RegistroVenta(int _dia = 0, double _capital = 0){ 
         tab = Tablas(_dia,_capital);
         ing = Ingredientes(_capital);
         ing.Crear();

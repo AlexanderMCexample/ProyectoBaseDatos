@@ -8,7 +8,7 @@
 #include "tablas.cpp"
 #include "ingredientes.cpp"
 
-#include "voucherganancia.cpp"
+#include "registroVenta.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
 //#include "platillos.cpp"
 
@@ -84,7 +84,7 @@ void datosPersonales()
 }
 
 
-void voucherGanancia()
+void registroVenta()
 {
   int dia;
   double capital;
@@ -93,21 +93,11 @@ void voucherGanancia()
   cout << "\n¿Cúal es su capital actual? ";
   cin >> capital;
   cout << endl;
-  VoucherGanancia voucherG(dia,capital);
-  voucherG.ganancia();
-  voucherG.gasto();
-  voucherG.imprimirVoucher();
+  RegistroVenta registroV(dia,capital);
+  registroV.ganancia();
+  registroV.gasto();
+  registroV.imprimirVoucher();
 }
-
-void voucherclientes()
-{
-
-  Voucher_Clientes dos;
-  dos.setDatos();
-  dos.imprimirDatosVoucher();
-
-}
-
 
 void platillos()
 {
@@ -120,6 +110,7 @@ void clientes()
 {
   cout << "\n\nBienvenido mi estimado Cliente\n\n";
 	Cliente client;
+  client.setDatos();
   cout << "\n\n==Realizar Una Compra==\n\n";
 	client.compra();
   cout << "\n\n";
@@ -150,4 +141,32 @@ void propietario()
   propie.imprimirAlmacen();
   cout << "\n\n===Voucher===\n\n";
   propie.imprimirTabla();
+}
+
+void menu()
+{
+  int opcion=0; //para ingresar a una tabla
+  do{
+    cout << "\n\n======Menu======\n\n";
+    cout << "A que modo deseea entrar: \n";
+    cout<<" 1) Cliente\n";
+    cout<<" 2) Dueño\n";
+    cout<<" 0) Salir\n\n";
+
+    cin >> opcion;
+    cin.ignore(10000,'\n');
+    switch (opcion)
+    {
+      case 1:
+        clientes();
+        break;
+      case 2:
+        propietario();
+        break;            
+      default:
+        break;
+    }
+
+  }while(opcion!=0);
+
 }

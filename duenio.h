@@ -1,12 +1,12 @@
 class Propietario {
     //atributos
     public:
-    VoucherGanancia voucher;
+    RegistroVenta registroVenta; //registros de ventas
     Datos_personales datosPropietario;    
 
     //constructores
     Propietario(int _dia = 0, double _capital = 0){
-        voucher = VoucherGanancia(_dia,_capital);
+        registroVenta = RegistroVenta(_dia,_capital);
     }
     
     //Metodos

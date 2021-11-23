@@ -6,25 +6,14 @@
 //Clases
 #include "vouchercliente.h"
 
-void Voucher_Clientes::setDatos()
+void Voucher_Clientes::imprimirDatosVoucher(char _nombre[20], int _ntarjeta, char _ttarjeta[20])
 {
-    datos.setDatos();
-    datos.getNombre(nombre);
-    datos.getTipoTarjeta(ttarjeta);
-    datos.getNumeroTarjeta(ntarjeta);
-}
-
-void Voucher_Clientes::imprimirDatosVoucher()
-{
-
-
-
     std::cout << "Generando Vaucher......" << "\n";
 
     std::cout << "--------Datos Personales--------" << "\n";
-    std::cout << "Nombre: " << nombre << "\n";
-    std::cout << "Tipo de Tarjeta: "<< ttarjeta << "\n";
-    std::cout << "Numero de Tarjeta: " << ntarjeta <<  "\n";
+    std::cout << "Nombre: " << _nombre << "\n";
+    std::cout << "Tipo de Tarjeta: "<< _ttarjeta << "\n";
+    std::cout << "Numero de Tarjeta: " << _ntarjeta <<  "\n";
     std::cout << "\n";
 
 }

@@ -8,13 +8,9 @@ class Voucher_Clientes {
     public:
 
     Platillos platos;
-    Datos_personales datos;
-    char nombre[20];
-    char ttarjeta[20];
-    int ntarjeta, control_gastos;
+    int control_gastos;
     double gastos[100];
 	
-
     //Constructor
     Voucher_Clientes(){
     	control_gastos=0;
@@ -23,15 +19,11 @@ class Voucher_Clientes {
 		{
         	gastos[i]=0;
         }
-        strcpy(nombre,"");
-        strcpy(ttarjeta,"");
     }
 
     //Metodos
 
-    void imprimirDatosVoucher();
-    void setDatos();
+    void imprimirDatosVoucher(char _nombre[20], int _ntarjeta, char _ttarjeta[20]);
     void imprimirGastos();
     void setGastos();
 };
-

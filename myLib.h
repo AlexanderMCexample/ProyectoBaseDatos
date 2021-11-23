@@ -5,4 +5,4 @@ void tablas();
 void ingredientes();
 void platillos();
 void datosPersonales();
-void voucherGanancia();
+void registroVenta();
