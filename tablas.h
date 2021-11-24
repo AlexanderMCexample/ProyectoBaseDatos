@@ -16,6 +16,7 @@ class Tablas {
     //Metodos
     void setGanancia();
     void setGanancia(double &_ganancia); //ingresar una ganancia
+    void setGanancia(std::string _nombreGanancia, double _precio);
     void setGasto(); //ingresar un gasto
     void setGasto(std::string _nombreGasto, double _gasto);
 

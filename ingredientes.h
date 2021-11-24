@@ -12,8 +12,8 @@ class Ingredientes
     //constructores
     Ingredientes();
     void imprimirAlmacen(); //Compra un ingrediente
-    void Tienda(); //Accede a la tienda para comprar ingredientes
-    void menu(); //menu para acceder a los anteriores metodos
+    void Tienda(Tablas &o); //Accede a la tienda para comprar ingredientes
+    void menu(Tablas &o); //menu para acceder a los anteriores metodos
     void incrementarDinero(int _dinero);
     
     double getcantidadesTotal(int num);

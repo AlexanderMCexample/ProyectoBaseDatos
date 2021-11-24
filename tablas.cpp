@@ -57,6 +57,13 @@ void Tablas::setGanancia(double &_ganancia)
   controlGanancias++; //control ganancia es el tamaño actual de la lista
 }
 
+void Tablas::setGanancia(std::string _nombreGanancia, double _precio)
+{
+  nombreGanancias[controlGanancias]=_nombreGanancia;
+  ganancias[controlGanancias] = _precio;
+  controlGanancias++; //control ganancia es el tamaño actual de la lista
+}
+
 void Tablas::setGasto()
 {
   cin.ignore(10000,'\n');//ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
@@ -72,7 +79,6 @@ void Tablas::setGasto()
 
 void Tablas::setGasto(std::string _nombreGasto, double _gasto)
 {
-  cin.ignore(10000,'\n');//ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
   nombreGastos[controlGastos]=_nombreGasto;
   gastos[controlGastos] = _gasto;
   controlGastos++; //control gastos es el tamaño actual de la lista
@@ -175,7 +181,7 @@ void Tablas::menu()
     cout << "2) Ingresar un gasto" << endl;
     cout << "3) Eliminar una ganancia" << endl;
     cout << "4) Eliminar un gasto" << endl;
-    cout << "5) Imprimir tabla" << endl;
+    cout << "5) Imprimir Registro de Ventas" << endl;
     cout << "6) Obtener una ganancia" << endl;
     cout << "7) Obtener un gasto" << endl;
     cout << "0) Salir\n\n";

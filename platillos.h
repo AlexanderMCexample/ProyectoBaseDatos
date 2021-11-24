@@ -13,7 +13,7 @@ class Platillos
     Platillos();
 	
     //Metodos
-    void Preparar(Ingredientes &ingredientes);
+    void Preparar(Ingredientes &ingredientes, Tablas &tablas);
     int getPrecio(int num);
 
 };

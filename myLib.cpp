@@ -16,7 +16,7 @@
 #include "duenio.cpp"
 using namespace std;
 
-void dueno()
+void dueno(Ingredientes &ingredientes,Propietario &propietario, RegistroVenta &registroVenta)
 {
   int opcion=0;
   do
@@ -24,9 +24,10 @@ void dueno()
     cout << "\n\n======Dueño======\n\n";
     cout << "A que modo deseea entrar: \n";
     cout<<" 1) Colocar Datos personales\n";
-    cout<<" 2) Imprimir Almacen\n";
-    cout<<" 3) Imprimir Registro\n";
-    cout<<" 4) Realizar compras de ingredientes\n";
+    cout<<" 2) Ingresar al Registro de ventas\n";
+    cout<<" 3) Imprimir Almacen\n";
+    cout<<" 4) Imprimir Registro de Ventas\n";
+    cout<<" 5) Realizar compras de ingredientes\n";
     cout<<" 0) Salir\n\n";
     cin >> opcion;
     cin.ignore(10000,'\n');
@@ -34,9 +35,21 @@ void dueno()
     switch (opcion)
     {
       case 1:
+        propietario.setDatos();
+        propietario.imprimirDatos();
         break;
       case 2:
+        registroVenta.menu();
         break;            
+      case 3:
+        ingredientes.imprimirAlmacen();
+        break;  
+      case 4:
+        registroVenta.imprimirTabla();      
+        break;  
+      case 5:
+        ingredientes.Tienda(registroVenta);
+        break;
       default:
         break;
     }
@@ -45,13 +58,9 @@ void dueno()
 }
 
 
-void cliente()
+void clientes(Platillos &platillos,Ingredientes &ingredientes, Cliente &cliente, Voucher_Clientes &voucher, RegistroVenta &registroVenta)
 {
   int opcion=0;
-  Cliente cliente;
-  Voucher_Clientes voucher;
-  Platillos platillos;
-  Ingredientes ingredientes;
 do{
 
     cout << "\n\n======Menu Cliente======\n\n";
@@ -71,8 +80,7 @@ do{
         break;
 
       case 2:
-      	platillos.Preparar(ingredientes);
-      	ingredientes.imprimirAlmacen();
+      	platillos.Preparar(ingredientes,registroVenta);
         break;     
 
       case 3:
@@ -86,11 +94,15 @@ do{
   }while(opcion!=0);
 }
 
-
-
 void menu()
 {
-  
+  Platillos platillos;
+  Ingredientes ingredientes;
+  Cliente cliente;
+  Voucher_Clientes voucher;
+  Propietario propietario;
+  RegistroVenta registroVenta;
+
   int opcion=0; //para ingresar a una tabla
   //Ingredientes ingredientes;
   //Platillos platillos;
@@ -106,9 +118,10 @@ void menu()
     switch (opcion)
     {
       case 1:
-        cliente();
+        clientes(platillos,ingredientes,cliente,voucher,registroVenta);
         break;
       case 2:
+        dueno(ingredientes,propietario,registroVenta);
         break;            
       default:
         break;

@@ -11,10 +11,10 @@
 using namespace std;   
 Platillos::Platillos(){
 	for (int i=0; i<4;i++)
-        {
-        	switch(i)
-        	{
-        	case 0:
+	{
+		switch(i)
+		{
+			case 0:
 				nombre[i]="Pizza 4 Quesos      ";
 				precio[i]=30;
 				break;
@@ -33,16 +33,16 @@ Platillos::Platillos(){
 			default:
 				break;
 		}
-        for (int row = 0; row < 4; row++)
-        {
-            for (int col = 0; col < 10; col++)
-            {
-                switch(row)
-	        	{
-	        	case 0: //4 QUESOS
+		for (int row = 0; row < 4; row++)
+		{
+			for (int col = 0; col < 10; col++)
+			{
+				switch(row)
+				{
+				case 0: //4 QUESOS
 					switch(col)
-		        	{
-		        	case 0: //ajo
+					{
+					case 0: //ajo
 						cantidadPorIngrediente[row][col]=0.004;
 						break;
 					case 1: // salsa de tomate
@@ -78,8 +78,8 @@ Platillos::Platillos(){
 					}
 				case 1: // NAPOLITANA
 					switch(col)
-		        	{
-		        	case 0: //ajo
+					{
+					case 0: //ajo
 						cantidadPorIngrediente[row][col]=0.001;
 						break;
 					case 1: // salsa de tomate
@@ -115,8 +115,8 @@ Platillos::Platillos(){
 					}
 				case 2: // PEPERONI
 					switch(col)
-		        	{
-		        	case 0: //ajo
+					{
+					case 0: //ajo
 						cantidadPorIngrediente[row][col]=0.001;
 						break;
 					case 1: // salsa de tomate
@@ -152,8 +152,8 @@ Platillos::Platillos(){
 					}
 				case 3: //HAWAIANA
 					switch(col)
-		        	{
-		        	case 0: //ajo
+					{
+					case 0: //ajo
 						cantidadPorIngrediente[row][col]=0.004;
 						break;
 					case 1: // salsa de tomate
@@ -190,30 +190,31 @@ Platillos::Platillos(){
 				default:
 					break;
 				}
-            }
-        }
+			}
+		}
     }
 	
 } 
-void Platillos::Preparar(Ingredientes &ingredientes)
+void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas)
 {
 	//ingredientes.getcantidadesTotal()
-  	int opcion;
-  	for (int i=0; i<3; i++)
+  	int opcion=0;
+  	for (int i=0; i<4; i++)
   	{
-  	cout<<i+1<<") "<<nombre[i]<<":        s/."<<precio[i]<<"\n";
+  		cout<<i+1<<") "<<nombre[i]<<":        s/."<<precio[i]<<"\n";
   	}
   	cout << "0) Salir\n\n";
-    while(opcion!=0)
+    do
     {
 	    cout << "Realize su orden"<<endl;
 	    cin >> opcion;
-	    if (opcion<0 || opcion>3)
+	    if (opcion<-1 || opcion>4)
 	    {
 	    	cout<<"Elija una opcion valida";
 		}
 		else
 		{
+			opcion--;
 			switch(opcion)
 			{
 			case 0:
@@ -221,28 +222,32 @@ void Platillos::Preparar(Ingredientes &ingredientes)
 				{
 					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
 				}
+				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				break;
 			case 1:
 				for (int i=0; i<10;i++)
 				{
-					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
+					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);					
 				}
+				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				break;
 			case 2:
 				for (int i=0; i<10;i++)
 				{
 					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
 				}
+				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				break;
 			case 3:
 				for (int i=0; i<10;i++)
 				{
 					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
 				}
+				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				break;
 			}
 		}
-	}
+	}while(opcion!=-1);
 }
 int Platillos::getPrecio(int num)
 {

@@ -81,7 +81,7 @@ void Ingredientes::imprimirAlmacen()
   }
 }
 
-void Ingredientes::Tienda()
+void Ingredientes::Tienda(Tablas &o)
 {
   	int opcion;
   	int opcion2;
@@ -112,13 +112,13 @@ void Ingredientes::Tienda()
 				{
 			    	cantidadesTotal[opcion-1]=cantidadesTotal[opcion-1]+opcion2; //colocar una ganancia
 			    	dinero=dinero-(precioKilo[opcion-1]*opcion2);
-			    	//o.setGasto(nombre[opcion-1],precioKilo[opcion-1]);
+			    	o.setGasto(nombre[opcion-1],precioKilo[opcion-1]);
 				}
 			}
 		}
 	}
 }
-void Ingredientes::menu()
+void Ingredientes::menu(Tablas &o)
 {
   int opcion=0;
   do{
@@ -134,7 +134,7 @@ void Ingredientes::menu()
       imprimirAlmacen(); //colocar una ganancia
       break;
     case 2:
-      Tienda(); //colocar un gasto
+      Tienda(o); //colocar un gasto
       break;
     default: 
       break;
