@@ -8,7 +8,7 @@
 
 using namespace std;    
 
-Tablas::Tablas (int _dia = 0, double _capital = 0):
+Tablas::Tablas(int _dia = 0, double _capital = 0):
 dia(_dia),capital(_capital),controlGanancias(0),controlGastos(0)
 { //contructor del los valroes y para inicializar las listas
   for(int i=0;i<100;i++){
