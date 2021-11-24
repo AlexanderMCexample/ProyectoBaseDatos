@@ -10,15 +10,9 @@ class Voucher_Clientes {
     double gastos[100];
 	
     //Constructor
-    Voucher_Clientes(){
-    	control_gastos=0;
-    	for(int i=0;i<100;i++)
-		{
-        	gastos[i]=0;
-        }
-    }
+    Voucher_Clientes();
 
     //Metodos
-    void imprimirDatosVoucher(char _nombre[20], int _ntarjeta, char _ttarjeta[20]);
+    void imprimirDatosVoucher(std::string _nombre, int _ntarjeta, std::string _ttarjeta);
     void imprimirGastos();
 };

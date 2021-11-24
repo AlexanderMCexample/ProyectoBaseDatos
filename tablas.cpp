@@ -8,6 +8,16 @@
 
 using namespace std;    
 
+Tablas::Tablas (int _dia = 0, double _capital = 0):
+dia(_dia),capital(_capital),controlGanancias(0),controlGastos(0)
+{ //contructor del los valroes y para inicializar las listas
+  for(int i=0;i<100;i++){
+      gastos[i]=0;
+      ganancias[i]=0;
+      nombreGastos[i] ="";
+      nombreGanancias[i] ="";
+  }
+}
 
 void Tablas::imprimirTabla()
 {
@@ -22,11 +32,11 @@ void Tablas::imprimirTabla()
 
 void Tablas::setGanancia()
 {
-  char a[20];
+  std::string a;
   cin.ignore(10000,'\n'); //ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
   cout <<"Ingrese el nombre de la ganancia: ";
-  gets(a);
-  strcpy(nombreGanancias[controlGanancias],a);
+  getline(cin,a);
+  nombreGanancias[controlGanancias] = a;
   cout << "\nIngrese el monto de la ganancia: ";
   cin >> ganancias[controlGanancias];
   cout <<endl;
@@ -35,15 +45,14 @@ void Tablas::setGanancia()
 
 void Tablas::setGanancia(double &_ganancia)
 {
-  char a[20];
+  std::string a;
   cin.ignore(10000,'\n'); //ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
   cout <<"Ingrese el nombre de la ganancia: ";
-  gets(a);
-  strcpy(nombreGanancias[controlGanancias],a);
+  getline(cin,a);
+  nombreGanancias[controlGanancias] = a;
   cout << "\nIngrese el monto de la ganancia: ";
   cin >> ganancias[controlGanancias];
   _ganancia = ganancias[controlGanancias]; //para pasar el dato valor de la ganancia por referencia
-
   cout <<endl;
   controlGanancias++; //control ganancia es el tamaño actual de la lista
 }
@@ -51,20 +60,20 @@ void Tablas::setGanancia(double &_ganancia)
 void Tablas::setGasto()
 {
   cin.ignore(10000,'\n');//ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
-  char a[20];
+  std::string a;
   cout <<"Ingrese el nombre del gasto: ";
-  gets(a);
-  strcpy(nombreGastos[controlGastos],a);
+  getline(cin,a);
+  nombreGastos[controlGastos]=a;
   cout << "\nIngrese el monto del gasto: ";
   cin >> gastos[controlGastos];
   cout <<endl;
   controlGastos++; //control gastos es el tamaño actual de la lista
 }
 
-void Tablas::setGasto(char _nombreGasto[20], double _gasto)
+void Tablas::setGasto(std::string _nombreGasto, double _gasto)
 {
   cin.ignore(10000,'\n');//ignore para eliminar el el último enter[\n] realizado en un cin para poder acceder al gets de no poner esto no se puede acceder al gets o getline
-  strcpy(nombreGastos[controlGastos],_nombreGasto);
+  nombreGastos[controlGastos]=_nombreGasto;
   gastos[controlGastos] = _gasto;
   controlGastos++; //control gastos es el tamaño actual de la lista
 }
@@ -73,7 +82,7 @@ void Tablas::imprimirGanacias()
 { //obtener la lista y total de ganancias
   cout << " Ganancias: " << totalGanancias() <<endl;
   for(int i = 0; i<controlGanancias;i++){
-    if(strcmp(nombreGanancias[i],"")!=0){
+    if(nombreGanancias[i] != ""){
       cout <<"    "<< i+1 << ") " << nombreGanancias[i] << ": "<< ganancias[i] << endl;  
     }
   }
@@ -83,7 +92,7 @@ void Tablas::imprimirGastos()
 {//obtener la lista y total de gastos
   cout << " Gastos: "<< totalGastos() <<endl;
   for(int i = 0; i<controlGastos;i++){
-    if(strcmp(nombreGastos[i],"")!=0){
+    if(nombreGastos[i] != ""){
       cout <<"    "<< i+1 << ") " << nombreGastos[i] << ": "<< gastos[i] << endl;  
     }
   }
@@ -100,7 +109,7 @@ void Tablas::deleteGanancia()
     for(int i=0;i<=controlGanancias;i++) //ordena la lista al eliminar cualquier elemento para no dejar huecos en la lista 
     {
       ganancias[a+i-1] = ganancias[a+i];
-      strcpy(nombreGanancias[a+i-1],nombreGanancias[a+i]);
+      nombreGanancias[a+i-1] = nombreGanancias[a+i];
     }
   }
 }
@@ -116,7 +125,7 @@ void Tablas::deleteGasto()
     for(int i=0;i<=controlGastos;i++)//ordena la lista al eliminar cualquier elemento para no dejar huecos en la lista 
     {
       gastos[a+i-1] = gastos[a+i];
-      strcpy(nombreGastos[a+i-1],nombreGastos[a+i]);
+      nombreGastos[a+i-1] = nombreGastos[a+i];
     }
   }
 }
@@ -139,17 +148,17 @@ double Tablas::totalGastos()
   return sumaGastos;
 }
 
-void Tablas::getGanacia(int _getGanancia, double &_ganancia, char _nombreGanancia[20]){
+void Tablas::getGanacia(int _getGanancia, double &_ganancia, std::string &_nombreGanancia){
   if(_getGanancia>=0 && _getGanancia<controlGanancias){
     _ganancia = ganancias[_getGanancia];
-    strcpy(_nombreGanancia,nombreGanancias[_getGanancia]);
+    _nombreGanancia = nombreGanancias[_getGanancia];
   }
 }
 
-void Tablas::getGasto(int _getGasto, double &_gasto, char _nombreGasto[20]){
+void Tablas::getGasto(int _getGasto, double &_gasto, std::string &_nombreGasto){
   if(_getGasto>=0 && _getGasto<controlGastos){
     _gasto = gastos[_getGasto];
-    strcpy(_nombreGasto,nombreGastos[_getGasto]);
+    _nombreGasto = nombreGastos[_getGasto];
   }
 }
 
@@ -159,7 +168,7 @@ void Tablas::menu()
   int opcion=0;
   int a=0;
   double _ganancia=0,_gasto=0;
-  char _nombreGanancia[20],_nombreGasto[20];
+  std::string _nombreGanancia,_nombreGasto;
   do{
     cout << "Seleccione una opción"<<endl;
     cout << "1) Ingresar una ganancia" << endl;
