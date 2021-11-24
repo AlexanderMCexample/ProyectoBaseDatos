@@ -9,19 +9,31 @@
 
 using namespace std;   
 
+
+//Constructor
+Datos_personales::Datos_personales():
+nombre("Sin respuesta"),direccion("Sin respuesta"),ttarjeta("Sin respuesta"), ntarjeta(0), ctarjeta(0)
+{}
+
+
+
+
+
+
+
 void Datos_personales::setDatos()
 {
-  char perfil[100];
+  std::string perfil;
   //cin.ignore(10000,'\n');
   cout << "Ingresar nombre: " << "\n";
-  gets(perfil);
-  strcpy(nombre,perfil);
+  getline(cin,perfil);
+  nombre=perfil;
   cout << "Ingresar Direccion: " << "\n";
-  gets(perfil);
-  strcpy(direccion,perfil);  
+  getline(cin,perfil);
+  direccion=perfil;  
   cout << "Ingresar tipo de Tarjeta de Credito: " << "\n";
-  gets(perfil);
-  strcpy(ttarjeta,perfil);
+  getline(cin,perfil);
+  ttarjeta=perfil;
   cout << "Ingresar numero de Tarjeta: " << "\n";
   cin >> ntarjeta;
   cout << "Ingresar su contraseña: " << "\n";
@@ -42,17 +54,33 @@ void Datos_personales::imprimirDatos()
 
 }
 
-void Datos_personales::getNombre(char _nombre[100])
+void Datos_personales::getNombre(std::string &_nombre)
 {
-  strcpy(_nombre,nombre);
+  _nombre=nombre;
 }
 
-void Datos_personales::getTipoTarjeta(char _ttarjeta[100])
+void Datos_personales::getTipoTarjeta(std::string &_ttarjeta)
 {
-  strcpy(_ttarjeta,ttarjeta);
+  _ttarjeta=ttarjeta;
 }
 void Datos_personales::getNumeroTarjeta(int &_ntarjeta)
 {
   _ntarjeta = ntarjeta;
 }
+
+
+std::string Datos_personales::getNombre()
+{
+  return nombre;
+}
+
+std::string Datos_personales::getTipoTarjeta()
+{
+  return ttarjeta;
+}
+int Datos_personales::getNumeroTarjeta()
+{
+  return ntarjeta;
+}
+
 

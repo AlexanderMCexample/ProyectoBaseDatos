@@ -6,30 +6,19 @@ class Tablas {
     public:
     double gastos[100], ganancias[100], capital; // valores para las tablas
     int dia,controlGastos,controlGanancias;
-    char nombreGastos[100][20], nombreGanancias[100][20]; //cada nombre contiene 20 palabras
+    std::string nombreGastos[100], nombreGanancias[100];
 
     //constructores
-    Tablas(int _dia = 0, double _capital = 0){ //contructor del los valroes y para inicializar las listas
-        dia = _dia;
-        capital = _capital;
-        controlGanancias = 0;
-        controlGastos = 0;
-        for(int i=0;i<100;i++){
-            gastos[i]=0;
-            ganancias[i]=0;
-            strcpy(nombreGanancias[i],"");
-            strcpy(nombreGastos[i],"");
-        }
-    }
+    Tablas(int _dia = 0, double _capital = 0); //contructor del los valroes y para inicializar las listas
 
     //Metodos
     void setGanancia();
     void setGanancia(double &_ganancia); //ingresar una ganancia
     void setGasto(); //ingresar un gasto
-    void setGasto(char _nombreGasto[20], double _gasto);
+    void setGasto(std::string _nombreGasto, double _gasto);
 
-    void getGanacia(int _getGanancia, double &_ganancia, char _nombreGanancia[20]); //obtener una ganancia de la lista
-    void getGasto(int _getGasto, double &_gasto, char _nombreGasto[20]); //obtener un gasto de la lista
+    void getGanacia(int _getGanancia, double &_ganancia, std::string &_nombreGanancia); //obtener una ganancia de la lista
+    void getGasto(int _getGasto, double &_gasto, std::string &_nombreGasto); //obtener un gasto de la lista
 
     void deleteGasto(); //eliminar un gasto
     void deleteGanancia(); //eliminar una ganancia

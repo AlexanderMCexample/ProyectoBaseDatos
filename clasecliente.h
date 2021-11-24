@@ -1,20 +1,12 @@
 #include <cstring> //para strcpy
 #include <conio.h> //gets()
 
-class Cliente {
+class Cliente:public Datos_personales {
     //Atributos
     public:
-    Datos_personales datos;
-    char nombre[20];
-    char ttarjeta[20];
-    int ntarjeta;
 
     //Constructor
-    Cliente(){
-        ntarjeta = 0;
-        strcpy(nombre,"");
-        strcpy(ttarjeta,"");
-    }
+    Cliente();
     
     //Metodos
 };

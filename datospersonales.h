@@ -8,26 +8,23 @@
 
 class Datos_personales{
 public:
-    char nombre[100];
-    char direccion[100];
-    char ttarjeta[100];
+    std::string nombre;
+    std::string direccion;
+    std::string ttarjeta;
     int ntarjeta;
     int ctarjeta;
     
     //Constructores
-    Datos_personales(){
-        strcpy(nombre,"Sin respuesta");
-        strcpy(direccion,"Sin respuesta");
-        strcpy(ttarjeta,"Sin respuesta");
-        ntarjeta = 0;
-        ctarjeta = 0;
-    }
+    Datos_personales();
     
     //Metodos
     void imprimirDatos();
     void setDatos();
 
-    void getNombre(char _nombre[100]);
+    void getNombre(std::string &_nombre);
     void getNumeroTarjeta(int &_ntarjeta);
-    void getTipoTarjeta(char _ttarjeta[100]);
+    void getTipoTarjeta(std::string &_ttarjeta);
+    std::string getNombre();
+    std::string getTipoTarjeta();
+    int getNumeroTarjeta();
 };

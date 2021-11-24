@@ -1,11 +1,9 @@
-class Propietario {
+class Propietario:public Datos_personales {
     //atributos
     public:
-    Datos_personales datosPropietario;    
 
     //constructores
-    Propietario(int _dia = 0, double _capital = 0){
-    }
+    Propietario();
     
     //Metodos
 };
