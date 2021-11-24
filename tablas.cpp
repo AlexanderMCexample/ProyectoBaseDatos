@@ -8,15 +8,15 @@
 
 using namespace std;    
 
-Tablas::Tablas (int _dia = 0, double _capital = 0):
-dia(_dia),capital(_capital),controlGanancias(0),controlGastos(0)
+Tablas::Tablas()
+//dia(_dia),capital(_capital),controlGanancias(0),controlGastos(0)
 { //contructor del los valroes y para inicializar las listas
-  for(int i=0;i<100;i++){
-      gastos[i]=0;
-      ganancias[i]=0;
-      nombreGastos[i] ="";
-      nombreGanancias[i] ="";
-  }
+  //for(int i=0;i<100;i++){
+      //gastos[i]=0;
+    //  ganancias[i]=0;
+      //nombreGastos[i] ="";
+      //nombreGanancias[i] ="";
+  //}
 }
 
 void Tablas::imprimirTabla()

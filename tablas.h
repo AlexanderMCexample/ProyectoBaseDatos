@@ -9,7 +9,7 @@ class Tablas {
     std::string nombreGastos[100], nombreGanancias[100];
 
     //constructores
-    Tablas(int _dia = 0, double _capital = 0); //contructor del los valroes y para inicializar las listas
+    Tablas(); //contructor del los valroes y para inicializar las listas
 
     //Metodos
     void setGanancia();

@@ -11,60 +11,60 @@
 
 using namespace std;    
 
-Ingredientes::Ingredientes(double dinero = 0):
-	this -> dinero(dinero),
+Ingredientes::Ingredientes():
+	dinero(200)
 	{
-		for (int i=0; i<10,i++)
+		for (int i=0; i<10;i++)
         {
         	switch(i)
         	{
         	case 0:
-				strcpy(nombre[i],"Ajo                ");
+				nombre[i]="Ajo                ";
 				precioKilo[i]=10;
 				cantidadesTotal[i]=10;
 				break;
 			case 1:
-				strcpy(nombre[i],"Salsa de tomate    ");
+				nombre[i]="Salsa de tomate    ";
 				precioKilo[i]=25;
 				cantidadesTotal[i]=10;
 				break;
 			case 2:
-				strcpy(nombre[i],"Pepperoni          ");
+				nombre[i]="Pepperoni          ";
 				precioKilo[i]=65;
 				cantidadesTotal[i]=10;
 				break;
 			case 3:
-				strcpy(nombre[i],"Masa               ");
+				nombre[i]="Masa               ";
 				precioKilo[i]=30;
 				cantidadesTotal[i]=10;
 				break;
 			case 4:
-				strcpy(nombre[i],"Queso              ");
+				nombre[i]="Queso              ";
 				precioKilo[i]=30;
 				cantidadesTotal[i]=10;
 				break;
 			case 5:
-				strcpy(nombre[i],"Pina                ");
+				nombre[i]="Pina                ";
 				precioKilo[i]=10;
 				cantidadesTotal[i]=10;
 				break;
 			case 6:
-				strcpy(nombre[i],"Champinon           ");
+				nombre[i]="Champinon           ";
 				precioKilo[i]=30;
 				cantidadesTotal[i]=10;
 				break;
 			case 7:
-				strcpy(nombre[i],"Aceituna            ");
+				nombre[i]="Aceituna            ";
 				precioKilo[i]=25;
 				cantidadesTotal[i]=10;
 				break;
 			case 8:
-				strcpy(nombre[i],"Oregano             ");
+				nombre[i]="Oregano             ";
 				precioKilo[i]=50;
 				cantidadesTotal[i]=10;
 				break;
 			case 9:
-				strcpy(nombre[i],"Aceite de oliva     ");
+				nombre[i]="Aceite de oliva     ";
 				precioKilo[i]=15;
 				cantidadesTotal[i]=10;
 				break;
@@ -81,13 +81,13 @@ void Ingredientes::imprimirAlmacen()
   }
 }
 
-void Ingredientes::Tienda(Tablas &o)
+void Ingredientes::Tienda()
 {
   	int opcion;
   	int opcion2;
   	for (int i=0; i<8; i++)
   	{
-  	cout<<i+1<<") "<<nombre[i]<<":        s/."<<precios[i]<<"\n";
+  	cout<<i+1<<") "<<nombre[i]<<":        s/."<<precioKilo[i]<<"\n";
   	}
   	cout << "0) Salir\n\n";
     while(opcion!=0)
@@ -111,8 +111,8 @@ void Ingredientes::Tienda(Tablas &o)
 				else
 				{
 			    	cantidadesTotal[opcion-1]=cantidadesTotal[opcion-1]+opcion2; //colocar una ganancia
-			    	dinero=dinero-(precio[opcion-1]*opcion2);
-			    	o.setGasto(nombre[opcion-1],precio[opcion-1]);
+			    	dinero=dinero-(precioKilo[opcion-1]*opcion2);
+			    	//o.setGasto(nombre[opcion-1],precioKilo[opcion-1]);
 				}
 			}
 		}
@@ -145,8 +145,11 @@ void Ingredientes::menu()
 void Ingredientes::incrementarDinero(int _dinero){
 	dinero += _dinero;
 }
-double getCantidadadesTotal(int num)
+double Ingredientes::getcantidadesTotal(int num)
 {
 	return cantidadesTotal[num];
 }
-
+void Ingredientes::setcantidadesTotal(int num,double num2)
+{
+	cantidadesTotal[num]=num2;
+}

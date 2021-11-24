@@ -10,11 +10,12 @@ class Ingredientes
     double cantidadesTotal[10];
     double dinero;
     //constructores
-    Ingredientes(double dinero = 0);
+    Ingredientes();
     void imprimirAlmacen(); //Compra un ingrediente
     void Tienda(); //Accede a la tienda para comprar ingredientes
     void menu(); //menu para acceder a los anteriores metodos
     void incrementarDinero(int _dinero);
     
-    double getcantidadadesTotal(int num);
+    double getcantidadesTotal(int num);
+    void setcantidadesTotal(int num,double num2);
 };

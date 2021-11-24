@@ -10,24 +10,24 @@
 
 using namespace std;   
 Platillos::Platillos(){
-	for (int i=0; i<4,i++)
+	for (int i=0; i<4;i++)
         {
         	switch(i)
         	{
         	case 0:
-				strcpy(nombre[i],"Pizza 4 Quesos      ");
+				nombre[i]="Pizza 4 Quesos      ";
 				precio[i]=30;
 				break;
 			case 1:
-				strcpy(nombre[i],"Pizza Napolitana    ");
+				nombre[i]="Pizza Napolitana    ";
 				precio[i]=35;
 				break;
 			case 2:
-				strcpy(nombre[i],"Pizza de Pepperoni  ");
+				nombre[i]="Pizza de Pepperoni  ";
 				precio[i]=30;
 				break;
 			case 3:
-				strcpy(nombre[i],"Pizza Hawaiana      ");
+				nombre[i]="Pizza Hawaiana      ";
 				precio[i]=40;
 				break;
 			default:
@@ -197,6 +197,7 @@ Platillos::Platillos(){
 } 
 void Platillos::Preparar(Ingredientes &ingredientes)
 {
+	//ingredientes.getcantidadesTotal()
   	int opcion;
   	for (int i=0; i<3; i++)
   	{
@@ -218,32 +219,32 @@ void Platillos::Preparar(Ingredientes &ingredientes)
 			case 0:
 				for (int i=0; i<10;i++)
 				{
-					ingredientes.getCantidadesTotal(i) -= cantidadPorIngrediente[opcion][i];
+					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
 				}
 				break;
 			case 1:
 				for (int i=0; i<10;i++)
 				{
-					ingredientes.getCantidadesTotal(i) -= cantidadPorIngrediente[opcion][i];
+					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
 				}
 				break;
 			case 2:
 				for (int i=0; i<10;i++)
 				{
-					ingredientes.getCantidadesTotal(i) -= cantidadPorIngrediente[opcion][i];
+					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
 				}
 				break;
 			case 3:
 				for (int i=0; i<10;i++)
 				{
-					ingredientes.getCantidadesTotal(i) -= cantidadPorIngrediente[opcion][i];
+					ingredientes.setcantidadesTotal(i,ingredientes.getcantidadesTotal(i) - cantidadPorIngrediente[opcion][i]);
 				}
 				break;
 			}
 		}
 	}
 }
-int getPrecio(int num)
+int Platillos::getPrecio(int num)
 {
 	return precio[num];
 }
