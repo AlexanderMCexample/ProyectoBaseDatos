@@ -24,4 +24,7 @@ public:
     void getNombre(std::string &_nombre);
     void getNumeroTarjeta(int &_ntarjeta);
     void getTipoTarjeta(std::string &_ttarjeta);
+    std::string getNombre();
+    std::string getTipoTarjeta();
+    int getNumeroTarjeta();
 };

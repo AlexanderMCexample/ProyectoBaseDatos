@@ -7,3 +7,7 @@
 #include "duenio.h" //clase Tablas
 
 using namespace std;    
+
+//Constructor
+Propietario::Propietario()
+{}

@@ -6,9 +6,7 @@ class Cliente:public Datos_personales {
     public:
 
     //Constructor
-    Cliente(){
-
-    }
+    Cliente();
     
     //Metodos
 };
