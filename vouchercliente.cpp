@@ -25,8 +25,3 @@ void Voucher_Clientes::imprimirGastos()
 		cout<<"Compra "<<i+1<<")"<<gastos[i]<<"\n";
 	}
 }
-
-void Voucher_Clientes::setGastos()
-{
-	platos.Vender(gastos, control_gastos);
-}

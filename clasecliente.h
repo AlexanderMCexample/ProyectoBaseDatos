@@ -4,7 +4,6 @@
 class Cliente {
     //Atributos
     public:
-    Voucher_Clientes voucher;
     Datos_personales datos;
     char nombre[20];
     char ttarjeta[20];
@@ -18,7 +17,4 @@ class Cliente {
     }
     
     //Metodos
-    void imprimirVoucher_Clientes();
-    void compra();
-    void setDatos();
 };

@@ -9,9 +9,6 @@ class Platillos
     
     char nombres[100][20], Ingredientes_usar_nombre[100][20];
 	double precios[100], Ingredientes_usar_cantidad[50][50], cantidad_ingredientes[100];
-	Ingredientes primero;
-	
-    
 
     //constructores
     Platillos()
@@ -27,15 +24,8 @@ class Platillos
         		Ingredientes_usar_cantidad[i][j]=0;
 			}
         }
-        primero = Ingredientes(500);
     }
 
-
     //Metodos
-    void Crear2();
-    void Vender(); 
-    void Vender(double _compra[100], int &_control_gastos);
-    
-
 
 };
