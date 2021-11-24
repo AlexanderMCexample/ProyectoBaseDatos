@@ -4,12 +4,14 @@
 class Tablas {
     //atributos
     public:
-    double gastos[100], ganancias[100], capital; // valores para las tablas
-    int dia,controlGastos,controlGanancias;
+    double gastos[100], ganancias[100];
+    double capital; // valores para las tablas
+    int dia;
+    int controlGastos,controlGanancias;
     std::string nombreGastos[100], nombreGanancias[100];
 
     //constructores
-    Tablas(int, double); //contructor del los valroes y para inicializar las listas
+    Tablas(int _dia, double _capital); //contructor del los valroes y para inicializar las listas
 
     //Metodos
     void setGanancia();
@@ -30,5 +32,5 @@ class Tablas {
     void imprimirGastos(); //obtener la lista y total de gastos
     void imprimirTabla(); //imprime la tabla dia, capital, ganacia, gasto
     void menu(); //menu para acceder a los anteriores metodos
-
+    
 };

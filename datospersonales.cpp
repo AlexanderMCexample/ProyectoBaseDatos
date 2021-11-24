@@ -68,3 +68,19 @@ void Datos_personales::getNumeroTarjeta(int &_ntarjeta)
   _ntarjeta = ntarjeta;
 }
 
+
+std::string Datos_personales::getNombre()
+{
+  return nombre;
+}
+
+std::string Datos_personales::getTipoTarjeta()
+{
+  return ttarjeta;
+}
+int Datos_personales::getNumeroTarjeta()
+{
+  return ntarjeta;
+}
+
+

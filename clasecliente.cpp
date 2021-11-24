@@ -6,3 +6,6 @@
 #include "clasecliente.h" //Clase Cliente
 using namespace std;   
 
+//Constructor
+Cliente::Cliente()
+{}
