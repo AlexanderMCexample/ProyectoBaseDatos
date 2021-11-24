@@ -18,6 +18,7 @@ using namespace std;
 
 void menu()
 {
+  
   int opcion=0; //para ingresar a una tabla
   do{
     cout << "\n\n======Menu======\n\n";
@@ -41,3 +42,4 @@ void menu()
   }while(opcion!=0);
 
 }
+
