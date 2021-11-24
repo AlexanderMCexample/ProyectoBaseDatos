@@ -1,14 +1,11 @@
 //vaucher de ganancias día
 
-class RegistroVenta {
+class RegistroVenta: public Tablas {
     //atributos
     public:
-    Tablas tab;
 
     //constructores
-    RegistroVenta(int _dia = 0, double _capital = 0){ 
-        tab = Tablas(_dia,_capital);
-    }
+    RegistroVenta(int _dia = 0, double _capital = 0);
 
     //Metodos
 };

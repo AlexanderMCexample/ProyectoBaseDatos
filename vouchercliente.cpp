@@ -6,7 +6,15 @@
 //Clases
 #include "vouchercliente.h"
 
-void Voucher_Clientes::imprimirDatosVoucher(char _nombre[20], int _ntarjeta, char _ttarjeta[20])
+Voucher_Clientes::Voucher_Clientes():control_gastos(0)
+{
+    for(int i=0;i<100;i++)
+    {
+        gastos[i]=0;
+    }
+}
+
+void Voucher_Clientes::imprimirDatosVoucher(std::string _nombre, int _ntarjeta, std::string _ttarjeta)
 {
     std::cout << "Generando Vaucher......" << "\n";
 
