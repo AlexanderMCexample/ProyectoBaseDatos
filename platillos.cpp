@@ -1,18 +1,11 @@
-#include <iostream>
-#include <math.h> //para formulas matem√°ticas
-#include <conio.h> //gets()
-#include <cstring> //strcpy strcmp
-#include <String.h> //string 
-//clases
-
 #include "platillos.h" //clase Ingredientes 
 
 
 using namespace std;   
-Platillos::Platillos(){
+Platillos::Platillos(){ //constructor
 	for (int i=0; i<4;i++)
         {
-        	switch(i)
+        	switch(i) //for que crea los nombres
         	{
         	case 0:
 				nombre[i]="Pizza 4 Quesos      ";
@@ -33,7 +26,7 @@ Platillos::Platillos(){
 			default:
 				break;
 		}
-        for (int row = 0; row < 4; row++)
+        for (int row = 0; row < 4; row++) //for que crea los ingredientes que usa cada platillo (MUY LARGO)
         {
             for (int col = 0; col < 10; col++)
             {
@@ -195,11 +188,11 @@ Platillos::Platillos(){
     }
 	
 } 
-void Platillos::Preparar(Ingredientes &ingredientes)
+void Platillos::Preparar(Ingredientes &ingredientes) //prepara los platillos gastando ingredientes
 {
 	//ingredientes.getcantidadesTotal()
   	int opcion;
-  	for (int i=0; i<3; i++)
+  	for (int i=0; i<4; i++)
   	{
   	cout<<i+1<<") "<<nombre[i]<<":        s/."<<precio[i]<<"\n";
   	}
@@ -208,7 +201,7 @@ void Platillos::Preparar(Ingredientes &ingredientes)
     {
 	    cout << "Realize su orden"<<endl;
 	    cin >> opcion;
-	    if (opcion<0 || opcion>3)
+	    if (opcion<0 || opcion>4)
 	    {
 	    	cout<<"Elija una opcion valida";
 		}
@@ -244,7 +237,7 @@ void Platillos::Preparar(Ingredientes &ingredientes)
 		}
 	}
 }
-int Platillos::getPrecio(int num)
+int Platillos::getPrecio(int num) // devuelve el precio para que en los voucher aparezcan como ganancia si es dueÒo, gasto si es cliente
 {
 	return precio[num];
 }

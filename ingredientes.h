@@ -1,21 +1,19 @@
-#include <cstring> //para strcpy
-#include <conio.h> //gets()
-//controlGastos y controlGanancias nos ayudan a tener la lista de gastos y ganancias en orden
-class Ingredientes
+class Ingredientes //Creación de la clase ingredientes
 {
     //atributos
     public:
-    std::string nombre[10];
-    double precioKilo[10];
-    double cantidadesTotal[10];
-    double dinero;
-    //constructores
+    std::string nombre[10]; //lista de los nombres
+    double precioKilo[10];  //lista de los precios x kilo
+    double cantidadesTotal[10]; //lista de las cantidades almacenadas
+    double dinero; //dinero ¿Se usará?, quién sabe...
+    //constructor
     Ingredientes();
-    void imprimirAlmacen(); //Compra un ingrediente
+    //metodos
+    void imprimirAlmacen(); //Imprime el almacen
     void Tienda(); //Accede a la tienda para comprar ingredientes
     void menu(); //menu para acceder a los anteriores metodos
-    void incrementarDinero(int _dinero);
+    void incrementarDinero(int _dinero); //Dinero ¿Que hace esto aqui? ... no lo se
     
-    double getcantidadesTotal(int num);
-    void setcantidadesTotal(int num,double num2);
+    double getcantidadesTotal(int num); //obtiene las cantidades almacenadas para ser usadas al preparar un platillo
+    void setcantidadesTotal(int num,double num2); //ingresa la nueva cantidad almacenada luego de preparar un platillo
 };

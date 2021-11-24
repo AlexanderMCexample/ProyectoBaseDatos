@@ -1,19 +1,16 @@
-#include <cstring> //para strcpy
-//#include "ingredientes.cpp"
-//controlGastos y controlGanancias nos ayudan a tener la lista de gastos y ganancias en orden
 class Platillos
 {
     //atributos
     public:
-    std::string nombre[4];
-    double precio[4];
-    double cantidadPorIngrediente[4][10];
+    std::string nombre[4]; //lista de los nombres de los diferentes platillos
+    double precio[4]; //lista de los precios
+    double cantidadPorIngrediente[4][10]; //matriz de las cantidades que usan los platillos de cada ingredientes (4 platillos, 10 ingredientes)
 
-    //constructores
-    Platillos();
+    //constructor
+    Platillos(); 
 	
     //Metodos
-    void Preparar(Ingredientes &ingredientes);
-    int getPrecio(int num);
+    void Preparar(Ingredientes &ingredientes); //prepara un platillo y gasta ingredientes
+    int getPrecio(int num); //devuelve el precio como ganancia... se usara proximamente :)
 
 };

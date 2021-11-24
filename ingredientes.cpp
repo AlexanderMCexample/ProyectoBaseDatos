@@ -1,22 +1,15 @@
-#include <iostream>
-#include <math.h> //para formulas matemáticas
-#include <conio.h> //gets()
-#include <cstring> //strcpy strcmp
-#include <String.h> //string 
-//clases
-
 #include "ingredientes.h" //clase Ingredientes 
 
 
 
 using namespace std;    
 
-Ingredientes::Ingredientes():
-	dinero(200)
+Ingredientes::Ingredientes(): //constructor
+	dinero(200) //QUE HACES AQUI FRED
 	{
 		for (int i=0; i<10;i++)
         {
-        	switch(i)
+        	switch(i) //creacion de las listas que almacenan los nombres, precios, cantidades
         	{
         	case 0:
 				nombre[i]="Ajo                ";
@@ -73,7 +66,7 @@ Ingredientes::Ingredientes():
 			}
 		}
 	}
-void Ingredientes::imprimirAlmacen()
+void Ingredientes::imprimirAlmacen() //funcion de imprimir almacen
 {
   for (int i=0; i<8; i++)
   {
@@ -81,7 +74,7 @@ void Ingredientes::imprimirAlmacen()
   }
 }
 
-void Ingredientes::Tienda()
+void Ingredientes::Tienda() //funcion para imprimir la tienda para realizar la compra de ingredientes
 {
   	int opcion;
   	int opcion2;
@@ -118,7 +111,7 @@ void Ingredientes::Tienda()
 		}
 	}
 }
-void Ingredientes::menu()
+void Ingredientes::menu() //menu para decidir si imprimir almacen o comprar mas ingredientes
 {
   int opcion=0;
   do{
@@ -142,14 +135,14 @@ void Ingredientes::menu()
   }while(opcion!=0);
 }
 
-void Ingredientes::incrementarDinero(int _dinero){
+void Ingredientes::incrementarDinero(int _dinero){ // uwu
 	dinero += _dinero;
 }
-double Ingredientes::getcantidadesTotal(int num)
+double Ingredientes::getcantidadesTotal(int num) //obtiene la cantidades totales
 {
 	return cantidadesTotal[num];
 }
-void Ingredientes::setcantidadesTotal(int num,double num2)
+void Ingredientes::setcantidadesTotal(int num,double num2) //ingresa cantidades totales
 {
 	cantidadesTotal[num]=num2;
 }
