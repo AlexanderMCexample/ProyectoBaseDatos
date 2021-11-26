@@ -1,22 +1,9 @@
-#include <iostream>
-#include <math.h> //para formulas matemáticas
-#include <conio.h> //gets()
-#include <cstring> //strcpy strcmp
-#include <String.h> //string 
-//clases
-#include "datospersonales.cpp"
-#include "tablas.cpp"
-#include "ingredientes.cpp"
+#include "opcionesMenu.h"
 
-#include "registroVenta.cpp"
-#include "vouchercliente.cpp" //clase vouchercliente
-//#include "platillos.cpp"
+OpcionesMenu::OpcionesMenu()
+{}
 
-#include "clasecliente.cpp" //clase Cliente
-#include "duenio.cpp"
-using namespace std;
-
-void dueno(Ingredientes &ingredientes,Propietario &propietario, RegistroVenta &registroVenta)
+void OpcionesMenu::dueno()
 {
   int opcion=0;
   do
@@ -58,7 +45,7 @@ void dueno(Ingredientes &ingredientes,Propietario &propietario, RegistroVenta &r
 }
 
 
-void clientes(Platillos &platillos,Ingredientes &ingredientes, Cliente &cliente, Voucher_Clientes &voucher, RegistroVenta &registroVenta)
+void OpcionesMenu::clientes()
 {
   int opcion=0;
 do{
@@ -80,7 +67,7 @@ do{
         break;
 
       case 2:
-      	platillos.Preparar(ingredientes,registroVenta);
+      	platillos.Preparar(ingredientes,registroVenta,voucher);
         break;     
 
       case 3:
@@ -94,7 +81,7 @@ do{
   }while(opcion!=0);
 }
 
-void menu()
+void OpcionesMenu::menuOpciones()
 {
   Platillos platillos;
   Ingredientes ingredientes;
@@ -102,6 +89,7 @@ void menu()
   Voucher_Clientes voucher;
   Propietario propietario;
   RegistroVenta registroVenta;
+
 
   int opcion=0; //para ingresar a una tabla
   //Ingredientes ingredientes;
@@ -118,16 +106,15 @@ void menu()
     switch (opcion)
     {
       case 1:
-        clientes(platillos,ingredientes,cliente,voucher,registroVenta);
+        clientes();
         break;
       case 2:
-        dueno(ingredientes,propietario,registroVenta);
+        dueno();
         break;            
       default:
         break;
     }
 
   }while(opcion!=0);
-
 }
 

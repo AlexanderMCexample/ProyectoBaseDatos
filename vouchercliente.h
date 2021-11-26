@@ -1,7 +1,7 @@
 #include <cstring> //para strcpy
 #include <conio.h> //gets()
 //clases
-#include "Platillos.cpp"
+//#include "Platillos.cpp"
 
 class Voucher_Clientes {
     //Atributos

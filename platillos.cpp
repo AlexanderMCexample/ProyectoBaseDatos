@@ -188,7 +188,7 @@ Platillos::Platillos(){ //constructor
     }
 	
 } 
-void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas) //prepara los platillos gastando ingredientes
+void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Clientes &voucher) //prepara los platillos gastando ingredientes
 {
 	//ingredientes.getcantidadesTotal()
   	int opcion=0;
