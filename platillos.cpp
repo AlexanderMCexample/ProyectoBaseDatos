@@ -4,9 +4,9 @@
 using namespace std;   
 Platillos::Platillos(){ //constructor
 	for (int i=0; i<4;i++)
+    {
+        switch(i) //for que crea los nombres
         {
-        	switch(i) //for que crea los nombres
-        	{
         	case 0:
 				nombre[i]="Pizza 4 Quesos      ";
 				precio[i]=30;
