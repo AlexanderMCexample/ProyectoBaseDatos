@@ -10,7 +10,7 @@ class Platillos
     Platillos(); 
 	
     //Metodos
-    void Preparar(Ingredientes &ingredientes, Tablas &tablas); //prepara un platillo y gasta ingredientes
+    void Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Clientes &voucher ); //prepara un platillo y gasta ingredientes
     int getPrecio(int num); //devuelve el precio como ganancia... se usara proximamente :)
 
 };

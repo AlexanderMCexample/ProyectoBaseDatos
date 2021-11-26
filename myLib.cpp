@@ -8,9 +8,10 @@
 #include "tablas.cpp"
 #include "ingredientes.cpp"
 
+
 #include "registroVenta.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
-//#include "platillos.cpp"
+#include "platillos.cpp"
 
 #include "clasecliente.cpp" //clase Cliente
 #include "duenio.cpp"
@@ -80,11 +81,13 @@ do{
         break;
 
       case 2:
-      	platillos.Preparar(ingredientes,registroVenta);
+      	platillos.Preparar(ingredientes,registroVenta, voucher);
+        
         break;     
 
       case 3:
         voucher.imprimirDatosVoucher(cliente.getNombre(), cliente.getNumeroTarjeta(), cliente.getTipoTarjeta());
+        voucher.imprimirGastos();
         break;
 
       default:

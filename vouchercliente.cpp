@@ -11,6 +11,7 @@ Voucher_Clientes::Voucher_Clientes():control_gastos(0)
     for(int i=0;i<100;i++)
     {
         gastos[i]=0;
+        nombre[i]="";
     }
 }
 
@@ -30,6 +31,15 @@ void Voucher_Clientes::imprimirGastos()
 	cout << "--------Gastos--------" << "\n";
 	for (int i=0 ; i<control_gastos ; i++)
 	{
-		cout<<"Compra "<<i+1<<")"<<gastos[i]<<"\n";
-	}
+        cout <<"    "<< i+1 << ") " << nombre[i] << ": "<< gastos[i] << endl;  
+    }
+	
 }
+
+void Voucher_Clientes::guardarCompra(std::string _nombreCompra, double _precio)
+{
+  nombre[control_gastos]=_nombreCompra;
+  gastos[control_gastos] = _precio;
+  control_gastos++; 
+}
+
