@@ -20,10 +20,18 @@
 
 int main() 
 {
-
   //  menuOpciones();
-  OpcionesMenu op;
+  int numeroCliente=0;
+  int numeroPropietarios=0;
+
+  cout << "Ingrese el número de clientes estimados del día: "<<endl;
+  cin >> numeroCliente;
+  cout << "Ingrese el número de Propietarios del local: "<<endl;
+  cin >> numeroPropietarios;
+  OpcionesMenu op(numeroCliente,numeroPropietarios);
+
+
   op.menuOpciones();
-  
+  op.escogerPropietario();  
   return 0;
 }

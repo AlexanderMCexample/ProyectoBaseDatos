@@ -7,10 +7,17 @@ class OpcionesMenu
     Voucher_Clientes *voucher;
     Propietario *propietario;
     RegistroVenta *registroVenta;
+    int numeroCliente;
+    int numeroPropietarios;
+    int indexPropietario;
+    int indexCliente;
 
-    OpcionesMenu();
+
+    OpcionesMenu(int _nClientes, int _nPropietarios);
     ~OpcionesMenu();
 
+    void escogerPropietario();
+    void escogerCliente();
     void dueno();
     void clientes();
     void menuOpciones();

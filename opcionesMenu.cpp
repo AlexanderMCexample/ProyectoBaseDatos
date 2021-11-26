@@ -1,22 +1,50 @@
 #include "opcionesMenu.h"
 
-OpcionesMenu::OpcionesMenu()
+OpcionesMenu::OpcionesMenu(int _nClientes=0, int _nPropietarios=0):
+numeroCliente(_nClientes),numeroPropietarios(_nPropietarios),indexCliente(0),indexPropietario(0)
 {
-  cliente = new Cliente;
-  voucher = new Voucher_Clientes;
-
-  ingredientes= new Ingredientes;
-  propietario= new Propietario;
-  registroVenta = new RegistroVenta;
+  if (numeroCliente >0)
+  {
+  cliente = new Cliente[numeroCliente];
+  voucher = new Voucher_Clientes[numeroCliente];
+  }
+  else
+  {
+      cliente = nullptr;
+      voucher = nullptr;
+  }
+  if (numeroPropietarios >0)
+  {
+    ingredientes= new Ingredientes[numeroPropietarios];
+    propietario= new Propietario[numeroPropietarios];
+    registroVenta = new RegistroVenta[numeroPropietarios];
+  }
+  else
+  {
+      ingredientes = nullptr;
+      propietario = nullptr;
+      registroVenta = nullptr;
+  }
 }
 OpcionesMenu::~OpcionesMenu()
 {
-  delete cliente;
-  delete voucher;
+  if (numeroCliente >0 || cliente != nullptr)
+  {
+    delete[] cliente;
+    delete[] voucher;
+  }
 
-  delete ingredientes;
-  delete propietario;
-  delete registroVenta;
+  if (numeroPropietarios >0 || ingredientes != nullptr)
+  {
+    delete[] ingredientes;
+    delete[] propietario;
+    delete[] registroVenta;
+  }
+
+  numeroCliente=0;
+  numeroPropietarios=0;
+  indexCliente=0;
+  indexPropietario=0;
 }
 
 void OpcionesMenu::dueno()
@@ -128,3 +156,17 @@ void OpcionesMenu::menuOpciones()
   }while(opcion!=0);
 }
 
+void OpcionesMenu::escogerPropietario()
+{
+  cout << "Cual propietario desea ingresar: " << endl;
+  for (int i = 0; i < numeroPropietarios; i++)
+  {
+    cout <<"    "<< i+1 << ") " << propietario[i].getNombre() << endl;  
+  }
+  
+}
+
+void OpcionesMenu::escogerCliente()
+{
+
+}
