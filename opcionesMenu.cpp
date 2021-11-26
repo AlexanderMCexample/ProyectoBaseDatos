@@ -67,11 +67,13 @@ do{
         break;
 
       case 2:
-      	platillos.Preparar(ingredientes,registroVenta,voucher);
+      	platillos.Preparar(ingredientes,registroVenta, voucher);
+        
         break;     
 
       case 3:
         voucher.imprimirDatosVoucher(cliente.getNombre(), cliente.getNumeroTarjeta(), cliente.getTipoTarjeta());
+        voucher.imprimirGastos();
         break;
 
       default:
@@ -83,14 +85,6 @@ do{
 
 void OpcionesMenu::menuOpciones()
 {
-  Platillos platillos;
-  Ingredientes ingredientes;
-  Cliente cliente;
-  Voucher_Clientes voucher;
-  Propietario propietario;
-  RegistroVenta registroVenta;
-
-
   int opcion=0; //para ingresar a una tabla
   //Ingredientes ingredientes;
   //Platillos platillos;
