@@ -166,8 +166,7 @@ void OpcionesMenu::escogerPropietario()
   {
     cout <<"    "<< i+1 << ") " << propietario[i].getNombre() << endl;  
   }
-  cin >> indexPropietario;
-  variables_rango(indexPropietario,50,1);
+  variables_rango(indexPropietario,numeroPropietarios,1);
   indexPropietario--;
 }
 
@@ -178,7 +177,7 @@ void OpcionesMenu::escogerCliente()
   {
     cout <<"    "<< i+1 << ") " << cliente[i].getNombre() << endl;  
   }
-  variables_rango(indexCliente,50,1);
+  variables_rango(indexCliente,numeroCliente,1);
   indexCliente--;
 }
 
