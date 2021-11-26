@@ -1,11 +1,6 @@
 #include <cstring> //para strcpy
 #include <conio.h> //gets()
 #include <iostream>
-
-//Datos Personales
-//Clientes y Dueño
-//Semana 1
-
 class Datos_personales{
 public:
     std::string nombre;

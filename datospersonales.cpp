@@ -15,12 +15,6 @@ Datos_personales::Datos_personales():
 nombre("Sin respuesta"),direccion("Sin respuesta"),ttarjeta("Sin respuesta"), ntarjeta(0), ctarjeta(0)
 {}
 
-
-
-
-
-
-
 void Datos_personales::setDatos()
 {
   std::string perfil;

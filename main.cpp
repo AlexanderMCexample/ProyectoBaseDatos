@@ -20,7 +20,6 @@
 
 int main() 
 {
-  //  menuOpciones();
   int numeroCliente=0;
   int numeroPropietarios=0;
 
@@ -32,6 +31,5 @@ int main()
 
 
   op.menuOpciones();
-  op.escogerPropietario();  
   return 0;
 }
