@@ -21,4 +21,5 @@ class OpcionesMenu
     void dueno();
     void clientes();
     void menuOpciones();
+    void variables_rango(int &n, int mayor, int menor);
 };

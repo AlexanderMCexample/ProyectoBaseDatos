@@ -26,6 +26,7 @@ numeroCliente(_nClientes),numeroPropietarios(_nPropietarios),indexCliente(0),ind
       registroVenta = nullptr;
   }
 }
+
 OpcionesMenu::~OpcionesMenu()
 {
   if (numeroCliente >0 || cliente != nullptr)
@@ -50,6 +51,7 @@ OpcionesMenu::~OpcionesMenu()
 void OpcionesMenu::dueno()
 {
   int opcion=0;
+  escogerPropietario();
   do
   {
     cout << "\n\n======Dueño======\n\n";
@@ -66,20 +68,20 @@ void OpcionesMenu::dueno()
     switch (opcion)
     {
       case 1:
-        propietario->setDatos();
-        propietario->imprimirDatos();
+        propietario[indexPropietario].setDatos();
+        propietario[indexPropietario].imprimirDatos();
         break;
       case 2:
-        registroVenta->menu();
+        registroVenta[indexPropietario].menu();
         break;            
       case 3:
-        ingredientes->imprimirAlmacen();
+        ingredientes[indexPropietario].imprimirAlmacen();
         break;  
       case 4:
-        registroVenta->imprimirTabla();      
+        registroVenta[indexPropietario].imprimirTabla();      
         break;  
       case 5:
-        ingredientes->Tienda(*registroVenta);
+        ingredientes[indexPropietario].Tienda(registroVenta[indexPropietario]);
         break;
       default:
         break;
@@ -91,8 +93,9 @@ void OpcionesMenu::dueno()
 
 void OpcionesMenu::clientes()
 {
+  escogerCliente();
   int opcion=0;
-do{
+  do{
 
     cout << "\n\n======Menu Cliente======\n\n";
     cout << "Que accion desea realizar: \n";
@@ -106,18 +109,18 @@ do{
     switch (opcion)
     {
       case 1:
-        cliente->setDatos();
-        cliente->imprimirDatos();
+        cliente[indexCliente].setDatos();
+        cliente[indexCliente].imprimirDatos();
         break;
 
       case 2:
-      	platillos.Preparar(*ingredientes,*registroVenta, *voucher);
+      	platillos.Preparar(ingredientes[indexPropietario],registroVenta[indexPropietario], voucher[indexCliente]);
         
         break;     
 
       case 3:
-        voucher->imprimirDatosVoucher(cliente->getNombre(), cliente->getNumeroTarjeta(), cliente->getTipoTarjeta());
-        voucher->imprimirGastos();
+        voucher[indexCliente].imprimirDatosVoucher(cliente[indexCliente].getNombre(), cliente[indexCliente].getNumeroTarjeta(), cliente[indexCliente].getTipoTarjeta());
+        voucher[indexCliente].imprimirGastos();
         break;
 
       default:
@@ -163,10 +166,43 @@ void OpcionesMenu::escogerPropietario()
   {
     cout <<"    "<< i+1 << ") " << propietario[i].getNombre() << endl;  
   }
-  
+  cin >> indexPropietario;
+  variables_rango(indexPropietario,50,1);
+  indexPropietario--;
 }
 
 void OpcionesMenu::escogerCliente()
 {
+  cout << "Cual escoja su nombre ingresado: " << endl;
+  for (int i = 0; i < numeroCliente; i++)
+  {
+    cout <<"    "<< i+1 << ") " << cliente[i].getNombre() << endl;  
+  }
+  variables_rango(indexCliente,50,1);
+  indexCliente--;
+}
 
+void OpcionesMenu::variables_rango(int &n, int mayor, int menor)  //función para ingresar una variable según su rango
+{
+    cout << "\n  Ingrerse el valor entre " << menor  << " y "<< mayor<<": ";
+    cin >> n;
+    while(true) //verifica si el ingreso de la variable es correcto
+    {
+        if (n<menor) 
+        {
+            cout << "\n  ingrese un valor mayor igual a " << menor<< ": ";
+            cin >> n;
+        }
+        else if (n>mayor) 
+        { 
+            cout << "\n  ingrese un valor menor igual a " << mayor<< ": ";
+            cin >> n;
+        }
+        else 
+        {
+            break;
+        }    
+    }
+    cout << "\n";
+    return;
 }
