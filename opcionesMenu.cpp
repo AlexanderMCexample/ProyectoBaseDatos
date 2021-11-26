@@ -1,7 +1,23 @@
 #include "opcionesMenu.h"
 
 OpcionesMenu::OpcionesMenu()
-{}
+{
+  cliente = new Cliente;
+  voucher = new Voucher_Clientes;
+
+  ingredientes= new Ingredientes;
+  propietario= new Propietario;
+  registroVenta = new RegistroVenta;
+}
+OpcionesMenu::~OpcionesMenu()
+{
+  delete cliente;
+  delete voucher;
+
+  delete ingredientes;
+  delete propietario;
+  delete registroVenta;
+}
 
 void OpcionesMenu::dueno()
 {
@@ -22,20 +38,20 @@ void OpcionesMenu::dueno()
     switch (opcion)
     {
       case 1:
-        propietario.setDatos();
-        propietario.imprimirDatos();
+        propietario->setDatos();
+        propietario->imprimirDatos();
         break;
       case 2:
-        registroVenta.menu();
+        registroVenta->menu();
         break;            
       case 3:
-        ingredientes.imprimirAlmacen();
+        ingredientes->imprimirAlmacen();
         break;  
       case 4:
-        registroVenta.imprimirTabla();      
+        registroVenta->imprimirTabla();      
         break;  
       case 5:
-        ingredientes.Tienda(registroVenta);
+        ingredientes->Tienda(*registroVenta);
         break;
       default:
         break;
@@ -62,18 +78,18 @@ do{
     switch (opcion)
     {
       case 1:
-        cliente.setDatos();
-        cliente.imprimirDatos();
+        cliente->setDatos();
+        cliente->imprimirDatos();
         break;
 
       case 2:
-      	platillos.Preparar(ingredientes,registroVenta, voucher);
+      	platillos.Preparar(*ingredientes,*registroVenta, *voucher);
         
         break;     
 
       case 3:
-        voucher.imprimirDatosVoucher(cliente.getNombre(), cliente.getNumeroTarjeta(), cliente.getTipoTarjeta());
-        voucher.imprimirGastos();
+        voucher->imprimirDatosVoucher(cliente->getNombre(), cliente->getNumeroTarjeta(), cliente->getTipoTarjeta());
+        voucher->imprimirGastos();
         break;
 
       default:
