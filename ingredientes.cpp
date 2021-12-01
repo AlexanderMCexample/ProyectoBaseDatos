@@ -1,7 +1,4 @@
 #include "ingredientes.h" //clase Ingredientes 
-
-
-
 using namespace std;    
 
 Ingredientes::Ingredientes(): //constructor
