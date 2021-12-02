@@ -38,9 +38,9 @@ void Tablas::setGanancia()
   getline(cin,a);
   nombreGanancias[controlGanancias] = a;
   cout << "\nIngrese el monto de la ganancia: ";
-  //cin >> ganancias[controlGanancias];
   datos.ingresoNumero(ganancias[controlGanancias]);
   cout <<endl;
+  capital+=ganancias[controlGanancias];
   controlGanancias++; //control ganancia es el tamaño actual de la lista
 }
 
@@ -52,7 +52,6 @@ void Tablas::setGanancia(double &_ganancia)
   getline(cin,a);
   nombreGanancias[controlGanancias] = a;
   cout << "\nIngrese el monto de la ganancia: ";
-  //cin >> ganancias[controlGanancias];
   datos.ingresoNumero(ganancias[controlGanancias]);
   _ganancia = ganancias[controlGanancias]; //para pasar el dato valor de la ganancia por referencia
   cout <<endl;
@@ -74,9 +73,9 @@ void Tablas::setGasto()
   getline(cin,a);
   nombreGastos[controlGastos]=a;
   cout << "\nIngrese el monto del gasto: ";
-  //cin >> gastos[controlGastos];
   datos.ingresoNumero(gastos[controlGastos]);
   cout <<endl;
+  capital -= gastos[controlGastos];
   controlGastos++; //control gastos es el tamaño actual de la lista
 }
 
@@ -109,35 +108,49 @@ void Tablas::imprimirGastos()
 
 void Tablas::deleteGanancia()
 {
-  int a;
-  cout << " Escriba el número que desee eliminar: ";
-  //cin >> a;
-  datos.ingresoNumero(a);
-  if(controlGanancias>=a&&a>=1) //para evitar eliminar un elemento que no esta en la lista
+  if (controlGastos>0)
   {
-    controlGanancias-=1; //como el control se ingrementa en uno al hacer set ganancias debo restarle 1 para poder hacer el recorrido actual de la  lista
-    for(int i=0;i<=controlGanancias;i++) //ordena la lista al eliminar cualquier elemento para no dejar huecos en la lista 
+    int a;
+    cout << " Escriba el número que desee eliminar: ";
+    datos.ingresoNumero(a);
+    if(controlGanancias>=a&&a>=1) //para evitar eliminar un elemento que no esta en la lista
     {
-      ganancias[a+i-1] = ganancias[a+i];
-      nombreGanancias[a+i-1] = nombreGanancias[a+i];
+      capital-=ganancias[a-1];
+      controlGanancias-=1; //como el control se ingrementa en uno al hacer set ganancias debo restarle 1 para poder hacer el recorrido actual de la  lista
+      for(int i=0;i<=controlGanancias;i++) //ordena la lista al eliminar cualquier elemento para no dejar huecos en la lista 
+      {
+        ganancias[a+i-1] = ganancias[a+i];
+        nombreGanancias[a+i-1] = nombreGanancias[a+i];
+      }
     }
+  }
+  else
+  {
+    cout << "No presenta ganancias.\n\n";
   }
 }
 
 void Tablas::deleteGasto()
 {
-  int a;
-  cout << " Escriba el gasto que desee eliminar: ";
-  //cin >> a;
-  datos.ingresoNumero(a);
-  if(controlGastos>=a&&a>=1) //para evitar eliminar un elemento que no esta en la lista
+  if (controlGastos>0)
   {
-    controlGastos-=1;//como el control se ingrementa en uno al hacer set ganancias debo restarle 1 para poder hacer el recorrido actual de la  lista
-    for(int i=0;i<=controlGastos;i++)//ordena la lista al eliminar cualquier elemento para no dejar huecos en la lista 
+    int a;
+    cout << " Escriba el gasto que desee eliminar: ";
+    datos.ingresoNumero(a);
+    if(controlGastos>=a&&a>=1) //para evitar eliminar un elemento que no esta en la lista
     {
-      gastos[a+i-1] = gastos[a+i];
-      nombreGastos[a+i-1] = nombreGastos[a+i];
+      capital+=gastos[a-1];
+      controlGastos-=1;//como el control se ingrementa en uno al hacer set ganancias debo restarle 1 para poder hacer el recorrido actual de la  lista
+      for(int i=0;i<=controlGastos;i++)//ordena la lista al eliminar cualquier elemento para no dejar huecos en la lista 
+      {
+        gastos[a+i-1] = gastos[a+i];
+        nombreGastos[a+i-1] = nombreGastos[a+i];
+      }
     }
+  }
+  else
+  {
+    cout << "No presenta gastos.\n\n";
   }
 }
 
@@ -214,19 +227,31 @@ void Tablas::menu()
       break;
     case 6:
       imprimirGanacias();
+      if (controlGanancias>0)
+      {
       cout << "Que ganancia desea obtener: ";
-      //cin >> a;
       datos.variables_rango(a,controlGanancias,1);
       getGanacia(a-1,_ganancia,_nombreGanancia);
       cout << "La ganancia de "<<_nombreGanancia<< " es: " << _ganancia <<"\n\n"; // imprimir la tabla del día
+      }
+      else
+      {
+        cout << "No presenta ganancias.\n\n";
+      }
       break;
     case 7:
       imprimirGastos();
+      if (controlGastos>0)
+      {
       cout << "Que gasto desea obtener: ";
-      //cin >> a;
       datos.variables_rango(a,controlGastos,1);
       getGasto(a-1,_gasto,_nombreGasto); // imprimir la tabla del día
       cout << "El gasto de "<<_nombreGasto<< " es: " << _gasto <<"\n\n";
+      }
+      else
+      {
+        cout << "No presenta gastos.\n\n";
+      }
       break;
     default: 
       break;
