@@ -8,7 +8,7 @@
 
 using namespace std;    
 
-RegistroVenta::RegistroVenta(int _dia = 0, double _capital = 0)
+RegistroVenta::RegistroVenta(int _dia = 0, double _capital = 0):Tablas(_dia,_capital)
 {
 
 }

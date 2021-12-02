@@ -218,6 +218,7 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				}
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
+				tablas.incrementarCapital(precio[opcion]);
 				break;
 			case 1:
 				for (int i=0; i<10;i++)
@@ -226,6 +227,7 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				}
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
+				tablas.incrementarCapital(precio[opcion]);
 				break;
 			case 2:
 				for (int i=0; i<10;i++)
@@ -234,6 +236,7 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				}
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
+				tablas.incrementarCapital(precio[opcion]);
 				break;
 			case 3:
 				for (int i=0; i<10;i++)
@@ -242,6 +245,7 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				}
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
+				tablas.incrementarCapital(precio[opcion]);
 				break;
 			}
 		}

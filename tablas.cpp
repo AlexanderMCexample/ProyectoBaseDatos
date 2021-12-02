@@ -9,7 +9,7 @@
 using namespace std;    
 
 Tablas::Tablas(int _dia = 0, double _capital = 0):
-dia(_dia),capital(_capital),controlGanancias(0),controlGastos(0)
+dia(_dia),capital(_capital),controlGanancias(0),controlGastos(0),capitalInicial(_capital)
 { //contructor del los valroes y para inicializar las listas
   for(int i=0;i<100;i++){
       gastos[i]=0;
@@ -23,10 +23,10 @@ void Tablas::imprimirTabla()
 {
   cout << "====================================\n";
   cout << "Dia "<<dia<<endl;
-  cout << " Capital inicial: "<<capital<<endl;
+  cout << " Capital inicial: "<<capitalInicial<<endl;
   imprimirGanacias();
   imprimirGastos();  
-  cout << " Capital final: " << capital + totalGanancias() - totalGastos() <<endl;
+  cout << " Capital final: " << capitalInicial + totalGanancias() - totalGastos() <<endl;
   cout << "====================================\n\n";
 }
 
@@ -232,4 +232,20 @@ void Tablas::menu()
       break;
     }
   }while(opcion!=0);
+}
+
+
+void Tablas::setCapital(double _capital)
+{
+  capital = _capital;
+}
+
+double Tablas::getCapital()
+{
+  return capital;
+}
+
+void Tablas::incrementarCapital(double _aumento)
+{
+  capital += _aumento;
 }

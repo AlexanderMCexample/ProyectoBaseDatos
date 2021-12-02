@@ -6,7 +6,7 @@ class Tablas {
     public:
     DatosIngresos datos;//evitar tener errores al ingresar datos 
     double gastos[100], ganancias[100];
-    double capital; // valores para las tablas
+    double capital,capitalInicial; // valores para las tablas
     int dia;
     int controlGastos,controlGanancias;
     std::string nombreGastos[100], nombreGanancias[100];
@@ -20,9 +20,11 @@ class Tablas {
     void setGanancia(std::string _nombreGanancia, double _precio);
     void setGasto(); //ingresar un gasto
     void setGasto(std::string _nombreGasto, double _gasto);
+    void setCapital(double _capital);
 
     void getGanacia(int _getGanancia, double &_ganancia, std::string &_nombreGanancia); //obtener una ganancia de la lista
     void getGasto(int _getGasto, double &_gasto, std::string &_nombreGasto); //obtener un gasto de la lista
+    double getCapital();
 
     void deleteGasto(); //eliminar un gasto
     void deleteGanancia(); //eliminar una ganancia
@@ -34,5 +36,6 @@ class Tablas {
     void imprimirGastos(); //obtener la lista y total de gastos
     void imprimirTabla(); //imprime la tabla dia, capital, ganacia, gasto
     void menu(); //menu para acceder a los anteriores metodos
+    void incrementarCapital(double _aumento);
     
 };

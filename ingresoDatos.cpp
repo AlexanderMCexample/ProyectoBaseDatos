@@ -11,12 +11,12 @@ void DatosIngresos::ingresoNumero(int &a)
   do
   {
     cin >> a;
-    error = cin.fail();
-    if (error)
+    error = cin.fail(); //retorna true si hay un error
+    if (error) //si se captura un error
     {
       cout <<"  ingreso no confirmado\n";
-      cin.clear();
-      cin.ignore(100,'\n');
+      cin.clear(); //limpia el registro cin
+      cin.ignore(100,'\n'); //elimina el último endl para el siguiente ingreso
     }
   } while (error);
 }
