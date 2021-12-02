@@ -190,7 +190,6 @@ Platillos::Platillos(){ //constructor
 } 
 void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Clientes &voucher ) //prepara los platillos gastando ingredientes
 {
-	//ingredientes.getcantidadesTotal()
   	int opcion=0;
   	for (int i=0; i<4; i++)
   	{
@@ -200,7 +199,6 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
     do
     {
 	    cout << "Realize su orden"<<endl;
-	    //cin >> opcion;
 		datos.ingresoNumero(opcion);
 	    if (opcion<-1 || opcion>4)
 	    {

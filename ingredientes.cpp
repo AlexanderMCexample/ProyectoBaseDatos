@@ -70,46 +70,6 @@ void Ingredientes::imprimirAlmacen() //funcion de imprimir almacen
   	cout<<nombre[i]<<":        "<<cantidadesTotal[i]<<"kg"<<"\n";
   }
 }
-/*
-void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para realizar la compra de ingredientes
-{
-  	int opcion;
-  	int opcion2;
-  	for (int i=0; i<8; i++)
-  	{
-  	cout<<i+1<<") "<<nombre[i]<<":        s/."<<precioKilo[i]<<"\n";
-  	}
-  	cout << "0) Salir\n\n";
-    while(opcion!=0)
-    {
-	    cout << "Elija un ingrediente a comprar                  s/."<<dinero<<endl;
-	    //cin >> opcion;
-		datos.ingresoNumero(opcion);
-	    if (opcion<0 || opcion>8)
-	    {
-	    	cout<<"Elija una opcion valida";
-		}
-		else
-		{
-			while(opcion2>0)
-		    {
-		    	cout << "Ingrese cantidad a comprar (kg)"<<endl;
-			    //cin >> opcion2;
-				datos.ingresoNumero(opcion2);
-			    if (opcion2>dinero)
-			    {
-			    	cout<<"Elija una opcion valida";
-				}
-				else
-				{
-			    	cantidadesTotal[opcion-1]=cantidadesTotal[opcion-1]+opcion2; //colocar una ganancia
-			    	dinero=dinero-(precioKilo[opcion-1]*opcion2);
-			    	o.setGasto(nombre[opcion-1],precioKilo[opcion-1]);
-				}
-			}
-		}
-	}
-}*/
 
 void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para realizar la compra de ingredientes
 {
@@ -134,7 +94,6 @@ void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para real
 			do
 		    {
 		    	cout << "Ingrese cantidad a comprar (kg)"<<endl;
-			    //cin >> opcion2;
 				datos.variables_rango(opcion2,100,0);
 				if(opcion2==0)
 				{
@@ -165,7 +124,6 @@ void Ingredientes::menu(Tablas &o) //menu para decidir si imprimir almacen o com
     cout << "1) Mostrar almacen" << endl;
     cout << "2) Entrar a la tienda" << endl;
     cout << "0) Salir\n\n";
-    //cin >> opcion;
     datos.ingresoNumero(opcion);
 
     switch (opcion)

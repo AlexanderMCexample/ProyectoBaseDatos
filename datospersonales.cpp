@@ -28,10 +28,8 @@ void Datos_personales::setDatos()
   getline(cin,perfil);
   ttarjeta=perfil;
   cout << "Ingresar numero de Tarjeta: " << "\n";
-  //cin >> ntarjeta;
   datos.ingresoNumero(ntarjeta);
   cout << "Ingresar su contraseña: " << "\n";
-  //cin >> ctarjeta;  
   datos.ingresoNumero(ctarjeta);
   cout << "Datos recibidos..... confirmando....." << "\n";
 }

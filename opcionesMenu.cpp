@@ -62,7 +62,6 @@ void OpcionesMenu::dueno()
     cout<<" 4) Imprimir Registro de Ventas\n";
     cout<<" 5) Realizar compras de ingredientes\n";
     cout<<" 0) Salir\n\n";
-    //cin >> opcion;
     datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
 
@@ -105,7 +104,6 @@ void OpcionesMenu::clientes()
     cout<<" 3) Imprimir voucher\n";
     cout<<" 0) Salir\n\n";
 
-    //cin >> opcion;
     datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
     switch (opcion)
@@ -135,8 +133,6 @@ void OpcionesMenu::clientes()
 void OpcionesMenu::menuOpciones()
 {
   int opcion=0; //para ingresar a una tabla
-  //Ingredientes ingredientes;
-  //Platillos platillos;
   do{
     cout << "\n\n======Menu======\n\n";
     cout << "A que modo deseea entrar: \n";
@@ -144,7 +140,6 @@ void OpcionesMenu::menuOpciones()
     cout<<" 2) Dueno\n";
     cout<<" 0) Salir\n\n";
 
-    //cin >> opcion;
     datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
     switch (opcion)

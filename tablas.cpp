@@ -203,7 +203,7 @@ void Tablas::menu()
     cout << "6) Obtener una ganancia" << endl;
     cout << "7) Obtener un gasto" << endl;
     cout << "0) Salir\n\n";
-    //cin >> opcion;
+
     datos.ingresoNumero(opcion);
 
     switch (opcion)
