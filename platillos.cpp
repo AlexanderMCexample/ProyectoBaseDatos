@@ -200,7 +200,8 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
     do
     {
 	    cout << "Realize su orden"<<endl;
-	    cin >> opcion;
+	    //cin >> opcion;
+		datos.ingresoNumero(opcion);
 	    if (opcion<-1 || opcion>4)
 	    {
 	    	cout<<"Elija una opcion valida";

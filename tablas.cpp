@@ -38,7 +38,8 @@ void Tablas::setGanancia()
   getline(cin,a);
   nombreGanancias[controlGanancias] = a;
   cout << "\nIngrese el monto de la ganancia: ";
-  cin >> ganancias[controlGanancias];
+  //cin >> ganancias[controlGanancias];
+  datos.ingresoNumero(ganancias[controlGanancias]);
   cout <<endl;
   controlGanancias++; //control ganancia es el tamaño actual de la lista
 }
@@ -51,7 +52,8 @@ void Tablas::setGanancia(double &_ganancia)
   getline(cin,a);
   nombreGanancias[controlGanancias] = a;
   cout << "\nIngrese el monto de la ganancia: ";
-  cin >> ganancias[controlGanancias];
+  //cin >> ganancias[controlGanancias];
+  datos.ingresoNumero(ganancias[controlGanancias]);
   _ganancia = ganancias[controlGanancias]; //para pasar el dato valor de la ganancia por referencia
   cout <<endl;
   controlGanancias++; //control ganancia es el tamaño actual de la lista
@@ -72,7 +74,8 @@ void Tablas::setGasto()
   getline(cin,a);
   nombreGastos[controlGastos]=a;
   cout << "\nIngrese el monto del gasto: ";
-  cin >> gastos[controlGastos];
+  //cin >> gastos[controlGastos];
+  datos.ingresoNumero(gastos[controlGastos]);
   cout <<endl;
   controlGastos++; //control gastos es el tamaño actual de la lista
 }
@@ -108,7 +111,8 @@ void Tablas::deleteGanancia()
 {
   int a;
   cout << " Escriba el número que desee eliminar: ";
-  cin >> a;
+  //cin >> a;
+  datos.ingresoNumero(a);
   if(controlGanancias>=a&&a>=1) //para evitar eliminar un elemento que no esta en la lista
   {
     controlGanancias-=1; //como el control se ingrementa en uno al hacer set ganancias debo restarle 1 para poder hacer el recorrido actual de la  lista
@@ -124,7 +128,8 @@ void Tablas::deleteGasto()
 {
   int a;
   cout << " Escriba el gasto que desee eliminar: ";
-  cin >> a;
+  //cin >> a;
+  datos.ingresoNumero(a);
   if(controlGastos>=a&&a>=1) //para evitar eliminar un elemento que no esta en la lista
   {
     controlGastos-=1;//como el control se ingrementa en uno al hacer set ganancias debo restarle 1 para poder hacer el recorrido actual de la  lista
@@ -185,8 +190,9 @@ void Tablas::menu()
     cout << "6) Obtener una ganancia" << endl;
     cout << "7) Obtener un gasto" << endl;
     cout << "0) Salir\n\n";
-    cin >> opcion;
-    
+    //cin >> opcion;
+    datos.ingresoNumero(opcion);
+
     switch (opcion)
     {
     case 1:
@@ -209,14 +215,16 @@ void Tablas::menu()
     case 6:
       imprimirGanacias();
       cout << "Que ganancia desea obtener: ";
-      cin >> a;
+      //cin >> a;
+      datos.variables_rango(a,controlGanancias,1);
       getGanacia(a-1,_ganancia,_nombreGanancia);
       cout << "La ganancia de "<<_nombreGanancia<< " es: " << _ganancia <<"\n\n"; // imprimir la tabla del día
       break;
     case 7:
       imprimirGastos();
       cout << "Que gasto desea obtener: ";
-      cin >> a;
+      //cin >> a;
+      datos.variables_rango(a,controlGastos,1);
       getGasto(a-1,_gasto,_nombreGasto); // imprimir la tabla del día
       cout << "El gasto de "<<_nombreGasto<< " es: " << _gasto <<"\n\n";
       break;

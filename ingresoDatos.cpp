@@ -21,9 +21,25 @@ void DatosIngresos::ingresoNumero(int &a)
   } while (error);
 }
 
+void DatosIngresos::ingresoNumero(double &a)
+{
+  bool error=false;
+  do
+  {
+    cin >> a;
+    error = cin.fail();
+    if (error)
+    {
+      cout <<"  ingreso no confirmado\n";
+      cin.clear();
+      cin.ignore(100,'\n');
+    }
+  } while (error);
+}
+
 void DatosIngresos::variables_rango(int &n, int mayor, int menor)  //función para ingresar una variable según su rango
 {
-    cout << "\n  Ingrerse el valor entre " << menor  << " y "<< mayor<<": ";
+    cout << "\n  Ingrese el valor entre " << menor  << " y "<< mayor<<": ";
     ingresoNumero(n);
     while(true) //verifica si el ingreso de la variable es correcto
     {

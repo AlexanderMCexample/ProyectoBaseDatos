@@ -2,6 +2,7 @@ class Platillos
 {
     //atributos
     public:
+    DatosIngresos datos;//evitar tener errores al ingresar datos 
     std::string nombre[4]; //lista de los nombres de los diferentes platillos
     double precio[4]; //lista de los precios
     double cantidadPorIngrediente[4][10]; //matriz de las cantidades que usan los platillos de cada ingredientes (4 platillos, 10 ingredientes)

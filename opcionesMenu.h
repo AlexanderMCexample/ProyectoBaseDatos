@@ -1,6 +1,7 @@
 class OpcionesMenu
 {
     public:
+    DatosIngresos datos;//evitar tener errores al ingresar datos 
     Platillos platillos;
     Ingredientes *ingredientes;
     Cliente *cliente;
@@ -21,5 +22,4 @@ class OpcionesMenu
     void dueno();
     void clientes();
     void menuOpciones();
-    void variables_rango(int &n, int mayor, int menor);
 };

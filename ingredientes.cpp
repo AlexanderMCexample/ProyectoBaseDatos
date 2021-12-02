@@ -83,7 +83,8 @@ void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para real
     while(opcion!=0)
     {
 	    cout << "Elija un ingrediente a comprar                  s/."<<dinero<<endl;
-	    cin >> opcion;
+	    //cin >> opcion;
+		datos.ingresoNumero(opcion);
 	    if (opcion<0 || opcion>8)
 	    {
 	    	cout<<"Elija una opcion valida";
@@ -93,7 +94,8 @@ void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para real
 			while(opcion2>0)
 		    {
 		    	cout << "Ingrese cantidad a comprar (kg)"<<endl;
-			    cin >> opcion2;
+			    //cin >> opcion2;
+				datos.ingresoNumero(opcion2);
 			    if (opcion2>dinero)
 			    {
 			    	cout<<"Elija una opcion valida";
@@ -116,8 +118,9 @@ void Ingredientes::menu(Tablas &o) //menu para decidir si imprimir almacen o com
     cout << "1) Mostrar almacen" << endl;
     cout << "2) Entrar a la tienda" << endl;
     cout << "0) Salir\n\n";
-    cin >> opcion;
-    
+    //cin >> opcion;
+    datos.ingresoNumero(opcion);
+
     switch (opcion)
     {
     case 1:

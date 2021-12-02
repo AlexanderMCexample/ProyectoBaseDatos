@@ -22,12 +22,9 @@ int main()
   int numeroPropietarios=0;
   
   cout << "Ingrese el número de clientes estimados del día: "<<endl;
-  datos.variables_rango(numeroCliente,10,1);
+  datos.variables_rango(numeroCliente,20,1);
   cout << "Ingrese el número de Propietarios del local: "<<endl;
-  datos.variables_rango(numeroPropietarios,20,1);
-
-  cout << endl<<numeroCliente <<endl;
-  cout << numeroPropietarios <<endl;
+  datos.variables_rango(numeroPropietarios,50,1);
   OpcionesMenu op(numeroCliente,numeroPropietarios);
   op.menuOpciones();
   return 0;

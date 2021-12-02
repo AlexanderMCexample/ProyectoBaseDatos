@@ -62,7 +62,8 @@ void OpcionesMenu::dueno()
     cout<<" 4) Imprimir Registro de Ventas\n";
     cout<<" 5) Realizar compras de ingredientes\n";
     cout<<" 0) Salir\n\n";
-    cin >> opcion;
+    //cin >> opcion;
+    datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
 
     switch (opcion)
@@ -104,7 +105,8 @@ void OpcionesMenu::clientes()
     cout<<" 3) Imprimir voucher\n";
     cout<<" 0) Salir\n\n";
 
-    cin >> opcion;
+    //cin >> opcion;
+    datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
     switch (opcion)
     {
@@ -142,7 +144,8 @@ void OpcionesMenu::menuOpciones()
     cout<<" 2) Dueno\n";
     cout<<" 0) Salir\n\n";
 
-    cin >> opcion;
+    //cin >> opcion;
+    datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
     switch (opcion)
     {
@@ -166,7 +169,7 @@ void OpcionesMenu::escogerPropietario()
   {
     cout <<"    "<< i+1 << ") " << propietario[i].getNombre() << endl;  
   }
-  variables_rango(indexPropietario,numeroPropietarios,1);
+  datos.variables_rango(indexPropietario,numeroPropietarios,1);
   indexPropietario--;
 }
 
@@ -177,31 +180,7 @@ void OpcionesMenu::escogerCliente()
   {
     cout <<"    "<< i+1 << ") " << cliente[i].getNombre() << endl;  
   }
-  variables_rango(indexCliente,numeroCliente,1);
+  datos.variables_rango(indexCliente,numeroCliente,1);
   indexCliente--;
 }
 
-void OpcionesMenu::variables_rango(int &n, int mayor, int menor)  //función para ingresar una variable según su rango
-{
-    cout << "\n  Ingrerse el valor entre " << menor  << " y "<< mayor<<": ";
-    cin >> n;
-    while(true) //verifica si el ingreso de la variable es correcto
-    {
-        if (n<menor) 
-        {
-            cout << "\n  ingrese un valor mayor igual a " << menor<< ": ";
-            cin >> n;
-        }
-        else if (n>mayor) 
-        { 
-            cout << "\n  ingrese un valor menor igual a " << mayor<< ": ";
-            cin >> n;
-        }
-        else 
-        {
-            break;
-        }    
-    }
-    cout << "\n";
-    return;
-}

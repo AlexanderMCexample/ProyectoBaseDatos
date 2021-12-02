@@ -4,6 +4,7 @@
 class Tablas {
     //atributos
     public:
+    DatosIngresos datos;//evitar tener errores al ingresar datos 
     double gastos[100], ganancias[100];
     double capital; // valores para las tablas
     int dia;

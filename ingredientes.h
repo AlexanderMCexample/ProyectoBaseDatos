@@ -2,6 +2,7 @@ class Ingredientes //Creaci�n de la clase ingredientes
 {
     //atributos
     public:
+    DatosIngresos datos;//evitar tener errores al ingresar datos 
     std::string nombre[10]; //lista de los nombres
     double precioKilo[10];  //lista de los precios x kilo
     double cantidadesTotal[10]; //lista de las cantidades almacenadas

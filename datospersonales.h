@@ -3,6 +3,7 @@
 #include <iostream>
 class Datos_personales{
 public:
+    DatosIngresos datos;//evitar tener errores al ingresar datos 
     std::string nombre;
     std::string direccion;
     std::string ttarjeta;

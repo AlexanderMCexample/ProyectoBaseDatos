@@ -18,7 +18,6 @@ nombre("Sin respuesta"),direccion("Sin respuesta"),ttarjeta("Sin respuesta"), nt
 void Datos_personales::setDatos()
 {
   std::string perfil;
-  //cin.ignore(10000,'\n');
   cout << "Ingresar nombre: " << "\n";
   getline(cin,perfil);
   nombre=perfil;
@@ -29,9 +28,11 @@ void Datos_personales::setDatos()
   getline(cin,perfil);
   ttarjeta=perfil;
   cout << "Ingresar numero de Tarjeta: " << "\n";
-  cin >> ntarjeta;
+  //cin >> ntarjeta;
+  datos.ingresoNumero(ntarjeta);
   cout << "Ingresar su contraseña: " << "\n";
-  cin >> ctarjeta;  
+  //cin >> ctarjeta;  
+  datos.ingresoNumero(ctarjeta);
   cout << "Datos recibidos..... confirmando....." << "\n";
 }
 
