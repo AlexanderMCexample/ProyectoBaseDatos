@@ -11,6 +11,11 @@ Cliente::Cliente(std::string _nombre = "Sin respuesta", std::string _direccion =
 Datos_personales(_nombre,_direccion,_ttarjeta,_ntarjeta,_ctarjeta), numeroCompras(0)
 {}
 
+Cliente::~Cliente() //Destructor
+{
+    numeroCompras = 0;
+}
+
 void Cliente::setNumeroCompras(int numero)
 {
     numeroCompras = numero;

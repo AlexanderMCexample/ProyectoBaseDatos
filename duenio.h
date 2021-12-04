@@ -5,6 +5,8 @@ class Propietario:public Datos_personales {
     //constructores
     Propietario(std::string, std::string, std::string, int, int);
     
+    ~Propietario();
+
     //Metodos
     void setContrasena();
     std::string getContrasena();
