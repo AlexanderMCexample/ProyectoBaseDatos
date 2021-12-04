@@ -9,6 +9,8 @@ class Platillos
 
     //constructor
     Platillos(); 
+
+    ~Platillos();
 	
     //Metodos
     void Preparar(Ingredientes &ingredientes, RegistroVenta &tablas, Voucher_Clientes &voucher,Cliente &cliente ); //prepara un platillo y gasta ingredientes
