@@ -13,7 +13,7 @@ class Tablas {
 
     //constructores
     Tablas(int _dia, double _capital); //contructor del los valroes y para inicializar las listas
-
+    ~Tablas();
     //Metodos
     void setGanancia();
     void setGanancia(double &_ganancia); //ingresar una ganancia

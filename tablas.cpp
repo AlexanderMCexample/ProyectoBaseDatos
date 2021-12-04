@@ -18,6 +18,21 @@ dia(_dia),capital(_capital),controlGanancias(0),controlGastos(0),capitalInicial(
       nombreGanancias[i] ="";
   }
 }
+Tablas::~Tablas()
+{
+  for (int i=0;i<=100;i++)
+  {
+    gastos[i]=0;
+    ganancias[i]=0;
+    nombreGastos[i]="";
+    nombreGanancias[i]="";
+  }
+  capital=0;
+  capitalInicial=0;
+  dia=0;
+  controlGastos=0;
+  controlGanancias=0;
+}
 
 void Tablas::imprimirTabla()
 {

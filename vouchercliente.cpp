@@ -14,7 +14,15 @@ Voucher_Clientes::Voucher_Clientes():control_gastos(0)
         nombre[i]="";
     }
 }
-
+Voucher_Clientes::~Voucher_Clientes()
+{
+    for (int i=0;i<=100;i++)
+    {
+        gastos[i]=0;
+        nombre[i]="";
+    }
+    control_gastos=0;
+}
 void Voucher_Clientes::imprimirDatosVoucher(std::string _nombre, int _ntarjeta, std::string _ttarjeta)
 {
     std::cout << "Generando Vaucher......" << "\n";

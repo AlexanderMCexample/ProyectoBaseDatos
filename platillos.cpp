@@ -188,7 +188,7 @@ Platillos::Platillos(){ //constructor
     }
 	
 } 
-void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Clientes &voucher ) //prepara los platillos gastando ingredientes
+void Platillos::Preparar(Ingredientes &ingredientes, RegistroVenta &tablas, Voucher_Clientes &voucher, Cliente &cliente ) //prepara los platillos gastando ingredientes
 {
   	int opcion=0;
   	for (int i=0; i<4; i++)
@@ -217,6 +217,8 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
 				tablas.incrementarCapital(precio[opcion]);
+				tablas.incrementarNumeroVentas(1);
+				cliente.incrementarNumeroCompras(1);
 				break;
 			case 1:
 				for (int i=0; i<10;i++)
@@ -226,6 +228,8 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
 				tablas.incrementarCapital(precio[opcion]);
+				tablas.incrementarNumeroVentas(1);
+				cliente.incrementarNumeroCompras(1);
 				break;
 			case 2:
 				for (int i=0; i<10;i++)
@@ -235,6 +239,8 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
 				tablas.incrementarCapital(precio[opcion]);
+				tablas.incrementarNumeroVentas(1);
+				cliente.incrementarNumeroCompras(1);
 				break;
 			case 3:
 				for (int i=0; i<10;i++)
@@ -244,6 +250,8 @@ void Platillos::Preparar(Ingredientes &ingredientes, Tablas &tablas, Voucher_Cli
 				tablas.setGanancia(nombre[opcion],precio[opcion]);
 				voucher.guardarCompra(nombre[opcion],precio[opcion]);
 				tablas.incrementarCapital(precio[opcion]);
+				tablas.incrementarNumeroVentas(1);
+				cliente.incrementarNumeroCompras(1);
 				break;
 			}
 		}

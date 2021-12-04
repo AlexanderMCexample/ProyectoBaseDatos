@@ -22,11 +22,11 @@
 #include "ingresoDatos.cpp" 
 #include "datospersonales.cpp"
 #include "tablas.cpp"
-#include "ingredientes.cpp"
 #include "registroVenta.cpp"
+#include "ingredientes.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
-#include "platillos.cpp"
-#include "clasecliente.cpp" //clase Cliente
+#include "clasecliente.cpp"
+#include "platillos.cpp" //clase Cliente
 #include "duenio.cpp"
 #include "opcionesMenu.cpp"
  

@@ -11,6 +11,7 @@ class Voucher_Clientes {
 	
     //Constructor
     Voucher_Clientes();
+    ~Voucher_Clientes();
 
     //Metodos
     void imprimirDatosVoucher(std::string _nombre, int _ntarjeta, std::string _ttarjeta);

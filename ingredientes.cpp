@@ -63,6 +63,16 @@ Ingredientes::Ingredientes(): //constructor
 			}
 		}
 	}
+Ingredientes::~Ingredientes()
+{
+  for(int i=0;i<=8;i++)
+  {
+	nombre[i]="";
+	precioKilo[i]=0;
+	cantidadesTotal[i]=0;
+  }
+  dinero=0;
+}
 void Ingredientes::imprimirAlmacen() //funcion de imprimir almacen
 {
   for (int i=0; i<8; i++)
@@ -71,7 +81,7 @@ void Ingredientes::imprimirAlmacen() //funcion de imprimir almacen
   }
 }
 
-void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para realizar la compra de ingredientes
+void Ingredientes::Tienda(RegistroVenta &o) //funcion para imprimir la tienda para realizar la compra de ingredientes
 {
   	int opcion=0;
   	int opcion2=0;
@@ -108,6 +118,7 @@ void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para real
 			    	cantidadesTotal[opcion-1]=cantidadesTotal[opcion-1]+opcion2; //colocar una ganancia
 			    	dinero=dinero-(precioKilo[opcion-1]*opcion2);
 			    	o.setGasto(nombre[opcion-1],precioKilo[opcion-1]*opcion2);
+					o.incrementarNumeroGastos(1);
 				}
 				opcion2=0;
 			}while(opcion2!=0);
@@ -116,7 +127,7 @@ void Ingredientes::Tienda(Tablas &o) //funcion para imprimir la tienda para real
 	o.setCapital(dinero);
 }
 
-void Ingredientes::menu(Tablas &o) //menu para decidir si imprimir almacen o comprar mas ingredientes
+void Ingredientes::menu(RegistroVenta &o) //menu para decidir si imprimir almacen o comprar mas ingredientes
 {
   int opcion=0;
   do{
@@ -132,7 +143,7 @@ void Ingredientes::menu(Tablas &o) //menu para decidir si imprimir almacen o com
       imprimirAlmacen(); //colocar una ganancia
       break;
     case 2:
-      Tienda(o); //colocar un gasto
+      //Tienda(o); //colocar un gasto
       break;
     default: 
       break;
