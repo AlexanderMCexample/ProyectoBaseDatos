@@ -188,6 +188,25 @@ Platillos::Platillos(){ //constructor
     }
 	
 } 
+
+Platillos::~Platillos() //Destructor
+{
+	for (int i = 0; i < 4 ; i++)
+	{
+		nombre[i] = "";
+	}
+	for (int i = 0; i < 4 ; i++ )
+	{	
+		precio[i] = 0; 
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; i < 10; i++)
+		{
+			cantidadPorIngrediente[i][j]=0;
+		}
+	}
+}
 void Platillos::Preparar(Ingredientes &ingredientes, RegistroVenta &tablas, Voucher_Clientes &voucher, Cliente &cliente ) //prepara los platillos gastando ingredientes
 {
   	int opcion=0;

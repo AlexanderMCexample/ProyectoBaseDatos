@@ -13,6 +13,11 @@ Propietario::Propietario(std::string _nombre = "Sin respuesta", std::string _dir
 Datos_personales(_nombre,_direccion,_ttarjeta,_ntarjeta,_ctarjeta), contrasena("")
 {}
 
+Propietario::~Propietario()
+{
+    contrasena = "";
+}
+
 void Propietario::setContrasena()
 {
     cout << "Registre su nueva contraseña (asegure recordarla): "<<endl;

@@ -7,6 +7,9 @@ class RegistroVenta: public Tablas{
 
     //constructores
     RegistroVenta(int _dia, double _capital);
+   
+    ~RegistroVenta();
+   
 
     //Metodos
     void setNumeroVentas(int _numeroVentas);

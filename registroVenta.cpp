@@ -12,6 +12,12 @@ RegistroVenta::RegistroVenta(int _dia = 0, double _capital = 0):
 Tablas(_dia,_capital),numeroVentas(0),numeroGastos(0)
 {}
 
+RegistroVenta::~RegistroVenta()
+    {
+        numeroVentas = 0;
+        numeroGastos = 0;
+    }
+
 void RegistroVenta::setNumeroVentas(int _numeroVentas)
 {
     numeroVentas = _numeroVentas;

@@ -9,6 +9,7 @@ class Cliente:public Datos_personales {
     Cliente(std::string, std::string, std::string, int, int);
     ~Cliente();
     
+    ~Cliente();
     //Metodos
 
     void setNumeroCompras(int);
