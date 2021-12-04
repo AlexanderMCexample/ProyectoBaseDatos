@@ -11,7 +11,7 @@ public:
     int ctarjeta;
     
     //Constructores
-    Datos_personales();
+    Datos_personales(std::string _nombre, std::string _direccion, std::string _ttarjeta, int _ntarjeta, int _ctarjeta);
     
     //Metodos
     void imprimirDatos();

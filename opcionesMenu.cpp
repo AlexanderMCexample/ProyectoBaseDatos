@@ -51,44 +51,54 @@ OpcionesMenu::~OpcionesMenu()
 void OpcionesMenu::dueno()
 {
   int opcion=0;
+  bool acceso = true; //ingreso de contrasena correcto
   escogerPropietario();
-  do
+  cin.ignore(10000,'\n');
+  acceso = propietario[indexPropietario].accesoContrasenaPropietario(); //confirmar si hay una contrasena, si lo hay pedida su ingreso para retornar si es correcto o no, de no haber una contrasena nos pedida colocar una y el acceso es true
+  if(acceso)
   {
-    cout << "\n\n======Dueño======\n\n";
-    cout << "A que modo deseea entrar: \n";
-    cout<<" 1) Colocar Datos personales\n";
-    cout<<" 2) Ingresar al Registro de ventas\n";
-    cout<<" 3) Imprimir Almacen\n";
-    cout<<" 4) Imprimir Registro de Ventas\n";
-    cout<<" 5) Realizar compras de ingredientes\n";
-    cout<<" 0) Salir\n\n";
-    //cin >> opcion;
-    datos.ingresoNumero(opcion);
-    cin.ignore(10000,'\n');
-
-    switch (opcion)
+    do
     {
-      case 1:
-        propietario[indexPropietario].setDatos();
-        propietario[indexPropietario].imprimirDatos();
-        break;
-      case 2:
-        registroVenta[indexPropietario].menu();
-        break;            
-      case 3:
-        ingredientes[indexPropietario].imprimirAlmacen();
-        break;  
-      case 4:
-        registroVenta[indexPropietario].imprimirTabla();      
-        break;  
-      case 5:
-        ingredientes[indexPropietario].Tienda(registroVenta[indexPropietario]);
-        break;
-      default:
-        break;
-    }
-    
-  } while (opcion!=0);
+      cout << "\n\n======Dueño======\n\n";
+      cout << "A que modo deseea entrar: \n";
+      cout<<" 1) Colocar Datos personales\n";
+      cout<<" 2) Ingresar al Registro de ventas\n";
+      cout<<" 3) Imprimir Almacen\n";
+      cout<<" 4) Imprimir Registro de Ventas\n";
+      cout<<" 5) Realizar compras de ingredientes\n";
+      cout<<" 6) Imprimir Numero de compras y ventas\n";
+      cout<<" 0) Salir\n\n";
+      datos.ingresoNumero(opcion);
+      cin.ignore(10000,'\n');
+
+      switch (opcion)
+      {
+        case 1:
+          propietario[indexPropietario].setContrasena();
+          propietario[indexPropietario].setDatos();
+          propietario[indexPropietario].imprimirDatos();
+          break;
+        case 2:
+          registroVenta[indexPropietario].menu();
+          break;            
+        case 3:
+          ingredientes[indexPropietario].imprimirAlmacen();
+          break;  
+        case 4:
+          registroVenta[indexPropietario].imprimirTabla();      
+          break;  
+        case 5:
+          ingredientes[indexPropietario].Tienda(registroVenta[indexPropietario]);
+          break;
+        case 6:
+          registroVenta[indexPropietario].imprimirNumeroComprasVentas();
+          break;
+        default:
+          break;
+      }
+      
+    } while (opcion!=0);
+  }
 }
 
 
@@ -103,9 +113,9 @@ void OpcionesMenu::clientes()
     cout<<" 1) Ingresar datos personales\n";
     cout<<" 2) Hacer un pedido\n";
     cout<<" 3) Imprimir voucher\n";
+    cout<<" 4) Imprimir numero compras\n";
     cout<<" 0) Salir\n\n";
 
-    //cin >> opcion;
     datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
     switch (opcion)
@@ -116,7 +126,7 @@ void OpcionesMenu::clientes()
         break;
 
       case 2:
-      	platillos.Preparar(ingredientes[indexPropietario],registroVenta[indexPropietario], voucher[indexCliente]);
+      	platillos.Preparar(ingredientes[indexPropietario],registroVenta[indexPropietario], voucher[indexCliente], cliente[indexCliente]);
         
         break;     
 
@@ -124,6 +134,9 @@ void OpcionesMenu::clientes()
         voucher[indexCliente].imprimirDatosVoucher(cliente[indexCliente].getNombre(), cliente[indexCliente].getNumeroTarjeta(), cliente[indexCliente].getTipoTarjeta());
         voucher[indexCliente].imprimirGastos();
         break;
+      case 4: 
+      	cliente[indexCliente].imprimirNumeroCompras();
+        break;  
 
       default:
         break;
@@ -135,8 +148,6 @@ void OpcionesMenu::clientes()
 void OpcionesMenu::menuOpciones()
 {
   int opcion=0; //para ingresar a una tabla
-  //Ingredientes ingredientes;
-  //Platillos platillos;
   do{
     cout << "\n\n======Menu======\n\n";
     cout << "A que modo deseea entrar: \n";
@@ -144,7 +155,6 @@ void OpcionesMenu::menuOpciones()
     cout<<" 2) Dueno\n";
     cout<<" 0) Salir\n\n";
 
-    //cin >> opcion;
     datos.ingresoNumero(opcion);
     cin.ignore(10000,'\n');
     switch (opcion)

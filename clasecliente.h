@@ -4,9 +4,14 @@
 class Cliente:public Datos_personales {
     //Atributos
     public:
-
+    int numeroCompras;
     //Constructor
-    Cliente();
+    Cliente(std::string, std::string, std::string, int, int);
     
     //Metodos
+
+    void setNumeroCompras(int);
+    int getNumeroCompras();
+    void incrementarNumeroCompras(int);
+    void imprimirNumeroCompras();
 };

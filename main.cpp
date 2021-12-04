@@ -1,3 +1,18 @@
+//Universidad Católica San Pablo
+//curso: Ciencias de la Computación CCOMP2 -1
+//Grupo:
+//    - Alexander Rafael Murillo Castillo
+//    - Jaime Mateo Gutierrez Muñoz
+//    - Emmanuel Del Piero Martinez Salcedo
+//Profesor:
+//    - DSc. Manuel Eduardo Loaiza Fernández 
+//Semestre 2021 - II
+//Arequipa - Perú
+//
+//GITHUB: https://github.com/AlexanderMCexample/ProyectoBaseDatos
+//Código ejecutado en VisualStudio
+
+
 #include <iostream>
 #include <math.h> //para formulas matemáticas
 #include <conio.h> //gets()
@@ -7,11 +22,11 @@
 #include "ingresoDatos.cpp" 
 #include "datospersonales.cpp"
 #include "tablas.cpp"
-#include "ingredientes.cpp"
 #include "registroVenta.cpp"
+#include "ingredientes.cpp"
 #include "vouchercliente.cpp" //clase vouchercliente
-#include "platillos.cpp"
-#include "clasecliente.cpp" //clase Cliente
+#include "clasecliente.cpp"
+#include "platillos.cpp" //clase Cliente
 #include "duenio.cpp"
 #include "opcionesMenu.cpp"
  

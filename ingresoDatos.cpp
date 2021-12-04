@@ -14,7 +14,7 @@ void DatosIngresos::ingresoNumero(int &a)
     error = cin.fail(); //retorna true si hay un error
     if (error) //si se captura un error
     {
-      cout <<"  ingreso no confirmado\n";
+      cout <<"  ingreso no confirmado. Vuelve a intentar: \n";
       cin.clear(); //limpia el registro cin
       cin.ignore(100,'\n'); //elimina el último endl para el siguiente ingreso
     }
@@ -30,7 +30,7 @@ void DatosIngresos::ingresoNumero(double &a)
     error = cin.fail();
     if (error)
     {
-      cout <<"  ingreso no confirmado\n";
+      cout <<"  ingreso no confirmado. Vuelve a intentar:\n";
       cin.clear();
       cin.ignore(100,'\n');
     }
