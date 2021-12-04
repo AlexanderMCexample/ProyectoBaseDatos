@@ -1,8 +1,14 @@
 class Propietario:public Datos_personales {
     //atributos
     public:
+    std::string contrasena;
     //constructores
-    Propietario();
+    Propietario(std::string, std::string, std::string, int, int);
     
     //Metodos
+    void setContrasena();
+    std::string getContrasena();
+    bool confirmeContrasena();
+    bool contrasenaVacia();
+    bool accesoContrasenaPropietario();
 };

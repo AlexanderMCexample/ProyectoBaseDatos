@@ -11,8 +11,8 @@ using namespace std;
 
 
 //Constructor
-Datos_personales::Datos_personales():
-nombre("Sin respuesta"),direccion("Sin respuesta"),ttarjeta("Sin respuesta"), ntarjeta(0), ctarjeta(0)
+Datos_personales::Datos_personales(std::string _nombre = "Sin respuesta", std::string _direccion = "Sin respuesta", std::string _ttarjeta = "Sin respuesta", int _ntarjeta = 0, int _ctarjeta = 0):
+nombre(_nombre),direccion(_direccion),ttarjeta(_ttarjeta), ntarjeta(_ntarjeta), ctarjeta(_ctarjeta)
 {}
 
 void Datos_personales::setDatos()
